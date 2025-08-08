@@ -9,13 +9,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-red': '#ff2c2c',
-        'secondary-cyan': '#00ffff',
-        'deep-black': '#0a0a0a',
-        'text-light': '#f0f0f0',
-        'muted-gray': '#888888',
-        'card-bg': '#111111',
-        'border-dark': '#222222',
+        'primary-red': '#ff2c2c',    // 🔴 Neon Red
+        'secondary-cyan': '#00ffff', // 🔵 Electric Cyan
+        'deep-black': '#0a0a0a',     // ⚫ Deep Black Background
+        'text-light': '#f0f0f0',     // 💬 Near-white text
+        'muted-gray': '#888888',     // ⚙️ Muted gray for secondary info
+        'card-bg': '#111111',        // 📦 Card background
+        'border-dark': '#222222',    // 📏 Border color
         'neon-pink': '#ff00ff',
         'neon-green': '#39ff14',
         'acid-yellow': '#eaff00',
@@ -32,11 +32,11 @@ module.exports = {
         'biohazard-yellow': '#ffff33',
       },
       fontFamily: {
-        sans: ['JetBrains Mono', 'monospace'],
-        mono: ['Orbitron', 'sans-serif'],
+        sans: ['JetBrains Mono', 'monospace'], // Body font
+        mono: ['Orbitron', 'sans-serif'], // Headings & code
       },
       boxShadow: {
-        'neon-cyan': '0 0 10px var(--tw-shadow-color)',
+        'neon-cyan': '0 0 10px var(--tw-shadow-color)', // For general glow
       },
     },
   },
