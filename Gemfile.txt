@@ -1,0 +1,234 @@
+# Gemfile
+
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
+# This gem avoids polling for changes on Windows, improving local dev performance.
+gem "wdm", ">= 0.1.0" if Gem.win_platform?
+
+# Add any other Jekyll plugins here if needed
+# gem "jekyll-feed"
+# gem "jekyll-sitemap"
+```html
+<!-- _layouts/default.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <!-- Google Fonts: Inter (for body) and Monospace (for headings) -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap)" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN - including custom theme config -->
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#ff2c2c',
+                        'secondary-cyan': '#00f2ff',
+                        'deep-black': '#0a0a0a',
+                        'text-light': '#f0f0f0',
+                        'muted-gray': '#888',
+                        'card-bg': '#111',
+                        'border-dark': '#222',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['SF Mono', 'Consolas', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 10px var(--tw-shadow-color)',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Custom Stylesheet (Jekyll compiles .scss to .css) -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> 
+</head>
+<body class="bg-deep-black text-text-light">
+    {% include header.html %}
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        {{ content }}
+    </main>
+    {% include footer.html %}
+    <!-- Main JavaScript file for site-wide functionality -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
+```scss
+/* assets/css/style.scss */
+
+---
+---
+/* AI-102 Study Journey - Cyberpunk CSS Style Guide */
+
+/* Global Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'SF Mono', 'Consolas', monospace; /* Headings */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: theme('colors.primary-red'); /* Default heading color */
+}
+
+/* Specific heading sizes for consistency, if not covered by Tailwind */
+h1 { font-size: 2.5rem; } /* Equivalent to text-4xl */
+h2 { font-size: 2rem; }   /* Equivalent to text-3xl */
+h3 { font-size: 1.75rem; } /* Equivalent to text-2xl */
+
+
+/* Buttons */
+.btn {
+  background-color: theme('colors.primary-red');
+  color: theme('colors.deep-black');
+  border: none;
+  padding: 0.75em 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 8px; /* Slightly rounded for cyberpunk feel */
+}
+.btn:hover {
+  background-color: theme('colors.secondary-cyan');
+  color: theme('colors.deep-black');
+  box-shadow: 0 0 10px theme('colors.secondary-cyan'); /* Glow effect on hover */
+}
+
+/* Cards */
+.card {
+  background-color: theme('colors.card-bg');
+  border: 1px solid theme('colors.border-dark');
+  border-radius: 8px;
+  padding: 1.5rem; /* Increased padding for better spacing */
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.02);
+  border-color: theme('colors.secondary-cyan');
+  box-shadow: 0 0 15px theme('colors.secondary-cyan'); /* Neon glow on hover */
+}
+
+/* Links */
+a {
+  color: theme('colors.secondary-cyan');
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section (specific styles not covered by Tailwind utilities) */
+.hero-section {
+  background-color: theme('colors.deep-black'); /* Fallback/base color */
+  color: theme('colors.text-light');
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative; /* Needed for pseudo-element overlay */
+  z-index: 0;
+  overflow: hidden; /* Important to contain any overflow from pseudo-element */
+}
+.hero-section h1 {
+  font-size: 3.5rem; /* Larger hero heading */
+  color: theme('colors.primary-red');
+  text-shadow: 0 0 15px theme('colors.primary-red'); /* Red glow */
+}
+.hero-section p {
+  color: theme('colors.muted-gray');
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+/* Glow Hover (for elements that need a specific glow) */
+.glow:hover {
+  box-shadow: 0 0 10px theme('colors.secondary-cyan');
+}
+
+/* Neon Flicker Animation */
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px theme('colors.secondary-cyan'), 0 0 10px theme('colors.secondary-cyan');
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+.neon-text {
+  animation: neonFlicker 2s infinite;
+}
+
+/* Utility for large icons */
+.icon-large {
+  font-size: 3rem; /* Adjusted from 4rem for better balance */
+  color: theme('colors.secondary-cyan'); /* Icon color */
+  text-shadow: 0 0 8px theme('colors.secondary-cyan'); /* Icon glow */
+}
+
+/* Specific styles for the study guide chart, if needed */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+.ul-topics {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: theme('colors.text-light');
+}
+.ul-topics li {
+    margin-bottom: 0.25rem;
+}
+
+/* --- NEW: Full Page Background Image --- */
+body {
+  /* Ensure these are at the end to override previous background-color */
+  /* Use Jekyll's relative_url filter for proper path resolution */
+  background-image: url('{{ "/assets/img/nn.jpg" | relative_url }}');
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+  position: relative; /* Needed for pseudo-element overlay */
+  z-index: 0; /* Ensure content is above overlay */
+}
+
+/* Add a subtle dark overlay for better text readability */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed (0.4 to 0.8) */
+  z-index: -1; /* Place behind content */
+}
+
+/* Ensure hero-section doesn't have a conflicting background-image or gradient if you want the body background to show through */
+.hero-section {
+    background-image: none !important; /* Remove any previous background image/gradient */
+    background-color: rgba(17, 17, 17, 0.7); /* Use a semi-transparent card-bg for the hero section */
+    backdrop-filter: blur(5px); /* Add a subtle blur effect for depth */
+    border-bottom: 1px solid theme('colors.border-dark');
+}
+.hero-section::before {
+    background-color: transparent; /* Remove the hero-specific overlay if body has one */
+}

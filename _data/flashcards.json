@@ -1,0 +1,10 @@
+[
+    {
+        "q": "What are the four main categories of Azure Cognitive Services?",
+        "a": "Vision, Speech, Language, and Decision."
+    },
+    {
+        "q": "What is the primary function of Azure Computer Vision?",
+        "a": "To analyze visual content and extract information from images."
+    }
+]

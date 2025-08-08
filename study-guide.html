@@ -1,0 +1,289 @@
+---
+layout: default
+title: AI Study Guide
+---
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-mono text-secondary-cyan uppercase tracking-wider static-glow">AI-102 Study Plan <br> 16 Week  </h1>
+        <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto typewriter">A detailed 16-week study schedule for the Azure AI Engineer Associate Exam.</p>
+    </header>
+
+    <div class="section-divider"></div>
+
+    <section id="daily-schedule" class="mb-20 reveal">
+        <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl">
+            <h2 class="text-3xl font-mono text-primary-red mb-4 text-center">Daily Study Time Blocks</h2>
+            <p class="font-sans text-muted-gray mb-8 text-center max-w-2xl mx-auto">This plan is built around 5-hour daily availability, structured for deep learning and effective review to maximize retention.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 shadow-lg">
+                    <p class="text-2xl font-mono text-secondary-cyan flex items-center mb-2"><span class="text-4xl mr-3">📘</span> 10:00–14:00</p>
+                    <p class="text-xl font-mono text-primary-red">Deep Learning & Labs</p>
+                    <p class="font-sans text-muted-gray mt-2">Use this block for hands-on labs, projects, and working through new Microsoft Learn modules. This is your primary learning window.</p>
+                </div>
+                <div class="card p-6 shadow-lg">
+                    <p class="text-2xl font-mono text-secondary-cyan flex items-center mb-2"><span class="text-4xl mr-3">🧾</span> 20:00–21:00</p>
+                    <p class="text-xl font-mono text-primary-red">Review & Retention</p>
+                    <p class="font-sans text-muted-gray mt-2">Dedicate this time to active recall, creating Cornell notes, building flashcards, and summarizing what you've learned earlier in the day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="blueprint" class="mb-20 reveal">
+        <div class="transparent-container rounded-xl shadow-2xl p-6 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-mono text-secondary-cyan mb-4">Exam Blueprint</h2>
+                    <p class="font-sans text-muted-gray mb-4">The AI-102 exam is broken down into six key domains. The chart highlights the weight of each domain, confirming that Natural Language Processing (NLP) solutions are the most critical area to master, followed by Planning and Generative AI.</p>
+                    <p class="font-sans text-muted-gray">This breakdown is essential for prioritizing your study effort and time allocation, ensuring you focus on the most impactful topics.</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="domainWeightsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="timeline" class="mb-20 reveal">
+         <h2 class="text-3xl font-mono text-secondary-cyan mb-8 text-center">A 16-Week Journey</h2>
+         <p class="font-sans text-muted-gray mb-12 text-center max-w-2xl mx-auto">This chronological roadmap breaks down your study into manageable weekly themes, topics, and hands-on lab focus areas, guiding you from fundamentals to final review.</p>
+         <div class="relative timeline-container ml-4 pl-8">
+            <div class="mb-8 relative timeline-item">
+                <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 1 </p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Orientation + Plan & Manage AI</h3>
+                    <p class="font-sans text-muted-gray mt-2">10h00 - 14h00: <br> Topics: <br> Azure AI Services overview, solution planning, cost/performance tradeoffs, Responsible AI, versioning, CI/CD.<br> Lab Focus: <br> Deploying Cognitive Services; building pipelines. <br> 20h00 - 21h00: <br> Cornell notes on architecture & governance.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 2 </p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">More Planning + Responsible AI</h3>
+                    <p class="font-sans text-muted-gray mt-2">10h00 - 14h00: Topics:<br> Deployment containers, privacy/compliance, monitoring, resource optimization, A/B testing. <br> Lab Focus: Deploy services using Docker + manage with Azure Monitor. <br> Evening: 20h00 - 21h00: <br>  Create cheat-sheet on planning architecture.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Weeks 3-5 (Aug 22–Sep 11)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">NLP Solutions Deep Dive</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:**</p>
+                    <ul class="list-style-gt">
+                        <li>Named entity recognition, sentiment analysis</li>
+                        <li>Text summarization & classification</li>
+                        <li>Language understanding (LUIS → CLU transition)</li>
+                        <li>Translation, speech-to-text, text-to-speech</li>
+                    </ul>
+                    <p class="font-sans text-muted-gray mt-2">**Lab Focus:** Language Studio + SDK-based projects. <br> **Evening:** Build flashcards for each NLP API; review confusion areas.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Weeks 6-7 (Sep 12–Sep 25)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Conversational AI & Bot Framework</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:** Azure Bot Service, QnA Maker/Language Studio QnA, Direct Line API, Adaptive dialogs, telemetry. <br> **Projects:** Deploy a bot via Webchat + enable logging. <br> **Evening:** Write summary sheets on bot architecture.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Weeks 8-9 (Sep 26–Oct 9)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Computer Vision</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:** OCR, image tagging, object detection, face analysis, custom vision training. <br> **Lab Focus:** Train and evaluate a custom vision model. <br> **Project:** Containerize and deploy a CV model. <br> **Evening:** Diagram use cases for each CV API.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Weeks 10-11 (Oct 10–Oct 23)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Generative AI & Prompting</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:**</p>
+                    <ul class="list-style-gt">
+                        <li>Prompt engineering for text/image/code</li>
+                        <li>Model grounding, embeddings</li>
+                        <li>Fine-tuning OpenAI models</li>
+                        <li>Azure OpenAI deployment + safety filters</li>
+                    </ul>
+                    <p class="font-sans text-muted-gray mt-2">**Lab Focus:** Use gpt-35-turbo to build a structured response system. <br> **Evening:** Prompt evaluation + reflection in a journal.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 12 (Oct 24–Oct 30)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Agentic Solutions</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:** The concept of an “agentic AI system,” LangChain/Semantic Kernel, task orchestration, and grounding external APIs. <br> **Lab Focus:** Build a small LangChain assistant in Azure. <br> **Evening:** Note limitations + evaluate flowcharts.</p>
+                </div>
+            </div>
+            <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 13 (Oct 31–Nov 6)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Knowledge Mining</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:** Azure Cognitive Search, custom indexing, enrichment, Document Intelligence/Form Recognizer. <br> **Lab Focus:** Index PDFs, run an enrichment pipeline, extract tables. <br> **Evening:** Draw architecture diagrams for integration.</p>
+                </div>
+            </div>
+             <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 14 (Nov 7–Nov 13)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">End-to-End Solution Integration</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Topics:** Combine NLP + CV + Search in a pipeline. <br> **Project:** Build a pipeline to scan a document, extract key info, search, and respond. <br> **Evening:** Troubleshoot and note performance tuning ideas.</p>
+                </div>
+            </div>
+             <div class="mb-8 relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 15 (Nov 14–Nov 20)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Practice Exams & Reinforcement</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Goal:** Take 2–3 full practice exams in the morning. <br> **Activities:** Dissect all wrong answers, update flashcards, and reinforce weak areas based on your results.</p>
+                </div>
+            </div>
+             <div class="relative timeline-item">
+                 <div class="card p-6 shadow-lg">
+                    <p class="text-sm font-mono text-secondary-cyan">Week 16 (Nov 21–Nov 28)</p>
+                    <h3 class="text-xl font-mono text-primary-red mt-1">Exam Polish & Readiness</h3>
+                    <p class="font-sans text-muted-gray mt-2">**Activities:** Simulate real exam conditions with 1 mock every 3 days. Do a light review of 1-pagers & flashcards. Final review of Responsible AI, governance, and cost planning. **Rest on November 28.**</p>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="techniques" class="mb-16 reveal">
+        <h2 class="text-3xl font-mono text-secondary-cyan mb-8 text-center">Study Techniques Explained</h2>
+        <p class="font-sans text-muted-gray mb-12 text-center max-w-2xl mx-auto">This set of techniques, used throughout your study, is designed to maximize memory retention and deep understanding.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🧠</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Active Recall</h3>
+                <p class="font-sans text-muted-gray mt-2">This is the practice of self-testing before reading notes, for example, "What are the parameters for a CLU intent model?" The effort of forcing your brain to retrieve information strengthens the neural pathways, leading to much stronger long-term retention than simply re-reading material. It's a cornerstone of effective learning.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">📅</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Spaced Repetition</h3>
+                <p class="font-sans text-muted-gray mt-2">This technique involves reviewing information at strategically increasing intervals. You'll revisit flashcards or topics right before you're about to forget them, which reinforces memory more effectively. Tools like Anki or RemNote are specifically designed to implement this method and make it highly efficient.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🔀</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Interleaving</h3>
+                <p class="font-sans text-muted-gray mt-2">Instead of studying one topic for an extended period, you'll mix related topics during your review sessions. For instance, you might combine a review of CLU with Translator and Sentiment API in a single session. This builds a more flexible understanding and helps you recognize the subtle differences and connections between services, which is crucial for exam questions that test your ability to choose the right tool for a given scenario.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">✍️</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Cornell Notes</h3>
+                <p class="font-sans text-muted-gray mt-2">This is a structured note-taking system where you divide your page into three sections: a main note-taking area, a smaller column for keywords and questions, and a summary section at the bottom. This method forces you to reflect on and organize your learning after each module, making it easier to self-quiz and create cheat-sheets later.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🧠</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Mind Mapping</h3>
+                <p class="font-sans text-muted-gray mt-2">Mind mapping is a visual technique for organizing information. It helps you draw connections between different APIs, service relationships, and data flow. Creating mind maps helps retain the overall structure of complex topics and can be a powerful tool for review.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🧪</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Practice by Doing</h3>
+                <p class="font-sans text-muted-gray mt-2">This method prioritizes hands-on labs and SDK integration over passive reading. By actively building solutions, you deepen your understanding, expose yourself to common failure modes, and learn how services actually work together in practice. It's a critical component of preparing for an exam that tests practical application.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🧩</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Cheat-Sheet Synthesis</h3>
+                <p class="font-sans text-muted-gray mt-2">The process of creating weekly 1-page summaries with key commands, use cases, costs, and limits for each service is highly effective for learning. This synthesis forces you to distill complex information into its most critical parts, creating a valuable resource for final review.</p>
+            </div>
+            <div class="card p-6 shadow-lg">
+                <div class="text-5xl font-mono mb-4 text-center">🧘</div>
+                <h3 class="text-xl font-mono text-primary-red text-center">Reflection Journaling</h3>
+                <p class="font-sans text-muted-gray mt-2">At the end of each week, you'll write down what you feel you have mastered, what is still fuzzy, and what needs revisiting. This practice forces cognitive closure, helping you consolidate your learning and identify areas that require more attention.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <footer class="text-center mt-16 pt-8 border-t border-white/10">
+        <p class="font-sans text-gray-400">This infographic was created to help you succeed. Stay focused, stick to the plan, and good luck!</p>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const domainData = {
+        labels: [
+            'Plan & Manage Azure AI Solutions',
+            'Implement Generative AI',
+            'Implement Agentic Solutions',
+            'Implement Computer Vision',
+            'NLP Solutions',
+            'Knowledge Mining & Document Intelligence'
+        ],
+        datasets: [{
+            label: 'Exam Domain Weight',
+            data: [17.5, 17.5, 7.5, 12.5, 32.5, 12.5],
+            backgroundColor: [
+                '#55DDE0',
+                '#F2B13B',
+                '#E03616',
+                '#F28F3B',
+                '#33658A',
+                '#00A6A6'
+            ],
+            borderColor: '#274f6b',
+            borderWidth: 4,
+            hoverOffset: 10
+        }]
+    };
+
+    const ctx = document.getElementById('domainWeightsChart').getContext('2d');
+    const domainWeightsChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: domainData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#cbd5e1',
+                        font: {
+                            size: 12
+                        },
+                        boxWidth: 20,
+                        padding: 20,
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed !== null) {
+                                label += context.parsed + '%';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            cutout: '60%'
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
