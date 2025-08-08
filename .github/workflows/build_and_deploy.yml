@@ -12,9 +12,8 @@ jobs:
       contents: read
       pages: write
       id-token: write
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Ruby
@@ -28,22 +27,22 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Node dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: Install Ruby dependencies
-        run: bundle install --jobs 4 --retry 3
-
-      - name: Build Tailwind CSS and Jekyll site
+      - name: Build Tailwind CSS and Jekyll
         run: |
           npm run build
           bundle exec jekyll build
 
-      - name: Upload GitHub Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
-
+          path: ./_site
+          name: github-pages
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+           name: github-pages
