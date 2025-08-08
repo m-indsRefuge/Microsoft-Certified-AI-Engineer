@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Portfolio website to document the journey of obtaining the Microsoft Certified: Azure AI Engineer Associate certification.",
   "scripts": {
-    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css && jekyll build",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
