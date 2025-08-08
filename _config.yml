@@ -1,11 +1,11 @@
-# Basic Jekyll Configuration for AI-102 Study Journey
+# Basic Jekyll Configuration for Microsoft Certified AI Engineer
 
 # Site settings
 title: AI-102 Study Journey
 email: nolanaug@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal study journey and public resource hub for the Microsoft AI-102 Certification.
-baseurl: "/ai-102-study-journey" # the subpath of your site, e.g. /blog. If hosted at root, leave empty.
+baseurl: "/Microsoft-Certified-AI-Engineer" # the subpath of your site, e.g. /blog. If hosted at root, leave empty.
 url: "https://m-indsRefuge.github.io" # the base hostname & protocol for your site
 github_username: m-indsRefuge
 
