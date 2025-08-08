@@ -16,11 +16,5 @@ collections:
     permalink: /weeks/:path/
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
-
-# Exclude from processing
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
