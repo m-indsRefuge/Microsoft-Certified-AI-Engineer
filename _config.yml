@@ -14,7 +14,10 @@ collections:
   weeks:
     output: true
     permalink: /weeks/:path/
-
+  summaries:
+    output: true
+    permalink: /summaries/:path/
+    
 # Build settings
 plugins:
   - jekyll-feed

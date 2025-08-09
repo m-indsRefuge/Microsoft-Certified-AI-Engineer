@@ -2,13 +2,30 @@
   "name": "microsoft-certified-ai-engineer",
   "version": "1.0.0",
   "description": "Portfolio website to document the journey of obtaining the Microsoft Certified: Azure AI Engineer Associate certification.",
+  "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css",
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css",
+    "watch": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4"
-  }
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-indsRefuge/Microsoft-Certified-AI-Engineer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-indsRefuge/Microsoft-Certified-AI-Engineer/issues"
+  },
+  "homepage": "https://github.com/m-indsRefuge/Microsoft-Certified-AI-Engineer#readme"
 }
