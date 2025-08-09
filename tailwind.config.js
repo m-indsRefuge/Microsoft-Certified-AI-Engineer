@@ -14,7 +14,7 @@ module.exports = {
         'deep-black': '#0a0a0a',
         'text-light': '#f0f0f0',
         'muted-gray': '#888888',
-        'card-bg': 'rgba(17, 17, 17, 0.75)', /* <<< THIS IS THE ONLY LINE THAT HAS BEEN CHANGED */
+        'card-bg': 'rgba(17, 17, 17, 0.75)',
         'border-dark': '#222222',
         'neon-pink': '#ff00ff',
         'neon-green': '#39ff14',
@@ -32,11 +32,11 @@ module.exports = {
         'biohazard-yellow': '#ffff33',
       },
       fontFamily: {
-  	   // For body text (applied with the 'font-sans' class)
-  	    'sans': ['Share Tech Mono', 'monospace'],
-  	   // For headings (applied with the 'font-mono' class)
-         'mono': ['Jetbrains Mono', 'sans-serif'],
-},      },
+        // For body text (applied with the 'font-sans' class)
+        'sans': ['Share Tech Mono', 'monospace'],
+        // For headings (applied with the 'font-mono' class)
+        'mono': ['Jetbrains Mono', 'sans-serif'],
+      }, // The extra brace that was here has been removed.
       boxShadow: {
         'neon-cyan': '0 0 10px var(--tw-shadow-color)',
       },
