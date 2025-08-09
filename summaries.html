@@ -3,5 +3,39 @@ layout: default
 title: Summaries
 ---
 
-<h1 class="text-4xl font-bold text-teal-400">Summaries</h1>
-<p class="mt-4 text-gray-300">Content for the summaries page will go here.</p>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-16">
+        <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-mono text-secondary-cyan uppercase tracking-wider static-glow">Study Summaries</h1>
+            <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto">
+                An interactive timeline of all notes, mind maps, and learning activities from the AI-102 journey.
+            </p>
+        </div>
+    </header>
+
+    <div class="relative">
+        <div class="absolute left-1/2 top-0 h-full w-0.5 bg-border-dark"></div>
+
+        <div class="relative space-y-12">
+            {% for summary in site.summaries %}
+                <div class="flex items-center w-full">
+                    
+                    <div class="w-10/12 mx-auto relative z-10">
+                        <div class="card p-6">
+                            <div class="prose prose-invert max-w-none">
+                                <p class="!text-sm !text-secondary-cyan">{{ summary.date | date: "%B %d, %Y" }}</p>
+                                <h2 class="!text-2xl !font-bold !text-primary-red !mt-1">{{ summary.title }}</h2>
+                                <p class="!text-sm">{{ summary.summary }}</p>
+                                
+                                <a href="{{ summary.url | relative_url }}" class="btn !no-underline !bg-primary-red !text-deep-black mt-4 !py-1 !px-2 !text-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary-cyan rounded-full shadow-lg shadow-secondary-cyan"></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

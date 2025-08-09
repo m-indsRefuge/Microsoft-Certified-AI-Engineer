@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-red': '#ff2d55',
-        'secondary-cyan': '#00ffff',
+        'primary-red': '#ff003c',
+        'secondary-cyan': '#00aaff',
         'deep-black': '#0a0a0a',
         'text-light': '#f0f0f0',
         'muted-gray': '#888888',
@@ -55,7 +55,7 @@ module.exports = {
         rippleGlow: {
           '0%': { 'box-shadow': '0 0 5px #00ffff' },
           '50%': { 'box-shadow': '0 0 20px #00ffff' },
-          '100%': { 'box-shadow': '0 0 5px #00ffff' },
+          '80%': { 'box-shadow': '0 0 5px #00ffff' },
         },
         shimmer: {
           '0%': { 'background-position': '-200% 0' },
@@ -84,12 +84,12 @@ module.exports = {
         },
       },
       animation: {
-        neonPulse: 'neonPulse 3s infinite ease-in-out',
+        neonPulse: 'neonPulse 15s infinite ease-in-out',
         rippleGlow: 'rippleGlow 0.8s infinite',
         shimmer: 'shimmer 2s linear infinite',
         typing: 'typing var(--type-duration) steps(var(--type-steps), end), blink 0.75s step-end infinite',
-        neonFlicker: 'neonFlicker 2s infinite',
-        gradientMove: 'gradientMove 4s linear infinite',
+        neonFlicker: 'neonFlicker 10s',
+        gradientMove: 'gradientMove 2s linear infinite',
       },
     },
   },
