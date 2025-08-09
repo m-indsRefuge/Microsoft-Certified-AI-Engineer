@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Audiowide, monospace;
+  font-family: Share Tech Mono, monospace;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -243,7 +243,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: Share Tech Mono, sans-serif;
+  font-family: Jetbrains Mono, sans-serif;
   /* 1 */
   font-feature-settings: normal;
   /* 2 */
@@ -665,20 +665,12 @@ video {
   margin-bottom: 2rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
-}
-
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-3 {
   margin-right: 0.75rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .mt-16 {
@@ -912,10 +904,6 @@ video {
   border-color: rgb(0 255 255 / var(--tw-border-opacity, 1));
 }
 
-.border-white\/10 {
-  border-color: rgb(255 255 255 / 0.1);
-}
-
 .\!bg-secondary-cyan {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(0 255 255 / var(--tw-bg-opacity, 1)) !important;
@@ -937,7 +925,7 @@ video {
 
 .bg-primary-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 44 44 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 45 85 / var(--tw-bg-opacity, 1));
 }
 
 .bg-secondary-cyan {
@@ -986,20 +974,12 @@ video {
   padding-bottom: 2rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
 .pr-4 {
   padding-right: 1rem;
 }
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
 }
 
 .text-center {
@@ -1011,11 +991,11 @@ video {
 }
 
 .font-mono {
-  font-family: Share Tech Mono, sans-serif;
+  font-family: Jetbrains Mono, sans-serif;
 }
 
 .font-sans {
-  font-family: Audiowide, monospace;
+  font-family: Share Tech Mono, monospace;
 }
 
 .text-2xl {
@@ -1031,11 +1011,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-lg {
@@ -1084,7 +1059,7 @@ video {
 
 .\!text-primary-red {
   --tw-text-opacity: 1 !important;
-  color: rgb(255 44 44 / var(--tw-text-opacity, 1)) !important;
+  color: rgb(255 45 85 / var(--tw-text-opacity, 1)) !important;
 }
 
 .\!text-secondary-cyan {
@@ -1100,11 +1075,6 @@ video {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .text-holo-silver {
@@ -1129,7 +1099,7 @@ video {
 
 .text-primary-red {
   --tw-text-opacity: 1;
-  color: rgb(255 44 44 / var(--tw-text-opacity, 1));
+  color: rgb(255 45 85 / var(--tw-text-opacity, 1));
 }
 
 .text-secondary-cyan {
@@ -1175,12 +1145,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1204,16 +1168,16 @@ video {
 /* Global Typography */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Share Tech Mono, sans-serif;
+  font-family: Jetbrains Mono, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   --tw-text-opacity: 1;
-  color: rgb(255 44 44 / var(--tw-text-opacity, 1));
+  color: rgb(255 45 85 / var(--tw-text-opacity, 1));
 }
 
 body {
-  font-family: Audiowide, monospace;
+  font-family: Share Tech Mono, monospace;
 }
 
 /* Specific heading sizes, if not covered by Tailwind */
@@ -1236,7 +1200,7 @@ h3 {
   border-radius: 0.5rem;
   border-style: none;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 44 44 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 45 85 / var(--tw-bg-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -1376,7 +1340,7 @@ a.shimmer {
   font-size: 3rem;
   line-height: 1;
   --tw-text-opacity: 1;
-  color: rgb(255 44 44 / var(--tw-text-opacity, 1));
+  color: rgb(255 45 85 / var(--tw-text-opacity, 1));
   animation: neonPulse 3s infinite ease-in-out;
 }
 
@@ -1665,10 +1629,6 @@ table tr:hover {
 @media (min-width: 1024px) {
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:px-8 {
