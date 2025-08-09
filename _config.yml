@@ -1,12 +1,13 @@
 # Basic Jekyll Configuration for Microsoft Certified AI Engineer
 
 # Site settings
-title: AI-102 Study Journey
+title: AI-12 Study Journey
 email: nolanaug@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal study journey and public resource hub for the Microsoft AI-102 Certification.
 baseurl: "/Microsoft-Certified-AI-Engineer" # the subpath of your site, e.g. /blog. If hosted at root, leave empty.
 url: "https://m-indsRefuge.github.io" # the base hostname & protocol for your site
+future: true # Tells Jekyll to build pages with future dates
 github_username: m-indsRefuge
 
 # Define collections for structured content like weekly summaries
@@ -17,6 +18,15 @@ collections:
   summaries:
     output: true
     permalink: /summaries/:path/
+
+# Set default layout for all documents in the 'summaries' collection
+defaults:
+  -
+    scope:
+      path: ""
+      type: "summaries"
+    values:
+      layout: "summary_post"
     
 # Build settings
 plugins:

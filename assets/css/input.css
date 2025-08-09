@@ -4,12 +4,14 @@
 
 /* Custom CSS from style.scss */
 
-/* Global Typography */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-mono font-bold uppercase tracking-widest text-primary-red;
-}
-body {
-  @apply font-sans;
+@layer base {
+  /* Global Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono font-bold uppercase tracking-widest text-primary-red;
+  }
+  body {
+    @apply font-sans;
+  }
 }
 
 /* Specific heading sizes, if not covered by Tailwind */
@@ -127,7 +129,6 @@ body::before {
   @apply fixed top-0 left-0 right-0 bottom-0 bg-black/60 -z-10;
 }
 body {
-    background-image: url("{{ '/assets/img/nn-fallback.jpg' | relative_url }}") !important;
     @apply bg-cover bg-center;
 }
 .hero-section {
@@ -175,4 +176,26 @@ table tr:hover {
 }
 .reveal.visible {
   @apply opacity-100 translate-y-0;
+}
+
+/* --- Self-Scrolling Timeline --- */
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.scroller-container {
+    @apply w-full overflow-hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller-inner {
+    @apply flex gap-8 w-max;
+    animation: infinite-scroll 60s linear infinite;
+}
+
+/* Pause animation on hover */
+.scroller-container.group:hover .scroller-inner {
+    animation-play-state: paused;
 }
