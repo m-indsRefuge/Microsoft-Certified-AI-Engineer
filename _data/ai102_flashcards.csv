@@ -1,0 +1,101 @@
+id,question,answer,tags,difficulty
+fc001,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc002,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc003,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc004,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc005,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc006,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc007,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc008,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc009,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc010,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc011,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc012,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc013,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc014,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc015,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc016,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc017,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc018,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc019,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc020,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc021,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc022,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc023,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc024,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc025,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc026,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc027,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc028,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc029,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc030,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc031,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc032,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc033,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc034,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc035,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc036,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc037,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc038,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc039,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc040,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc041,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc042,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc043,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc044,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc045,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc046,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc047,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc048,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc049,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc050,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc051,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc052,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc053,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc054,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc055,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc056,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc057,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc058,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc059,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc060,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc061,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc062,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc063,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc064,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc065,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc066,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc067,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc068,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc069,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc070,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc071,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc072,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc073,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc074,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc075,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc076,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc077,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc078,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc079,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc080,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc081,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc082,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc083,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc084,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc085,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard
+fc086,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Hard
+fc087,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Easy
+fc088,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Medium
+fc089,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Hard
+fc090,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Easy
+fc091,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Easy
+fc092,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Medium
+fc093,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Hard
+fc094,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Easy
+fc095,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Medium
+fc096,"In Azure AI Search, which feature allows you to combine multiple data sources into a single searchable index?",Indexers,"Knowledge Mining, Azure AI Search",Medium
+fc097,Which Azure service provides a hosted environment for building and deploying conversational AI bots?,Azure Bot Service,"Conversational AI, Azure Bot Service",Hard
+fc098,"In Azure AI Vision, which capability detects and extracts printed text from images?",Optical Character Recognition (OCR),"Computer Vision, Azure AI Vision",Easy
+fc099,What is the primary benefit of using a custom question answering project in Azure AI Language over a prebuilt one?,It allows you to upload and manage your own knowledge base for domain-specific Q&A.,"Natural Language Processing, Azure AI Language",Medium
+fc100,Which Azure feature helps you apply ethical principles and assess potential harm in AI solutions?,Responsible AI Standard and Responsible AI Dashboard,"Governance, Responsible AI",Hard

@@ -6,7 +6,7 @@ title: AI Study Guide
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
     <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-mono text-secondary-cyan uppercase tracking-wider static-glow">AI-102 Study Plan <br> 16 Week  </h1>
+        <h1 class="text-4xl md:text-5xl font-mono uppercase tracking-wider" data-text="AI-102 Study Plan 16 Week">AI-102 Study Plan <br> 16 Week  </h1>
         <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto typewriter">A detailed 16-week study schedule for the Azure AI Engineer Associate Exam.</p>
     </header>
 
@@ -14,17 +14,17 @@ title: AI Study Guide
 
     <section id="daily-schedule" class="mb-20 reveal">
         <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl">
-            <h2 class="text-3xl font-mono text-primary-red mb-4 text-center">Daily Study Time Blocks</h2>
+            <h2 class="text-3xl font-mono mb-4 text-center" data-text="Daily Study Time Blocks">Daily Study Time Blocks</h2>
             <p class="font-sans text-holo-silver mb-8 text-center max-w-2xl mx-auto">This plan is built around 5-hour daily availability, structured for deep learning and effective review to maximize retention.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card p-6 shadow-lg">
                     <p class="text-2xl font-mono text-secondary-cyan flex items-center mb-2"><span class="text-4xl mr-3">📘</span> 10:00–14:00</p>
-                    <p class="text-xl font-mono text-primary-red">Deep Learning & Labs</p>
+                    <h3 class="text-xl font-mono" data-text="Deep Learning & Labs">Deep Learning & Labs</h3>
                     <p class="font-sans text-muted-gray mt-2">Use this block for hands-on labs, projects, and working through new Microsoft Learn modules. This is your primary learning window.</p>
                 </div>
                 <div class="card p-6 shadow-lg">
                     <p class="text-2xl font-mono text-secondary-cyan flex items-center mb-2"><span class="text-4xl mr-3">🧾</span> 20:00–21:00</p>
-                    <p class="text-xl font-mono text-primary-red">Review & Retention</p>
+                    <h3 class="text-xl font-mono" data-text="Review & Retention">Review & Retention</h3>
                     <p class="font-sans text-muted-gray mt-2">Dedicate this time to active recall, creating Cornell notes, building flashcards, and summarizing what you've learned earlier in the day.</p>
                 </div>
             </div>
@@ -36,13 +36,15 @@ title: AI Study Guide
     <section id="blueprint" class="mb-20 reveal">
         <div class="transparent-container rounded-xl shadow-2xl p-6 md:p-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="prose prose-invert max-w-none">
-                    <h2 class="!text-secondary-cyan">Exam Blueprint</h2>
-                    <p>The AI-102 exam is broken down into six key domains. The chart highlights the weight of each domain, confirming that Natural Language Processing (NLP) solutions are the most critical area to master, followed by Planning and Generative AI.</p>
-                    <p>This breakdown is essential for prioritizing your study effort and time allocation, ensuring you focus on the most impactful topics.</p>
+                <!-- Column 1: Text -->
+                <div>
+                    <h2 data-text="Exam Blueprint" class="mb-4">Exam Blueprint</h2>
+                    <p class="text-text-light mb-4">The AI-102 exam is broken down into six key domains. The interactive neural hub visualizes the weight of each domain, confirming that Natural Language Processing (NLP) solutions are the most critical area to master.</p>
+                    <p class="text-text-light">This breakdown is essential for prioritizing your study effort. Hover over a node to see details.</p>
                 </div>
-                <div class="chart-container">
-                    <canvas id="domainWeightsChart"></canvas>
+                <!-- Column 3: Neural Hub -->
+                <div id="neural-hub-container" class="w-50 h-50">
+                    <!-- D3.js renders the SVG visualization here. The missing closing tag is now added. -->
                 </div>
             </div>
         </div>
@@ -51,24 +53,24 @@ title: AI Study Guide
     <div class="section-divider"></div>
 
     <section id="timeline" class="mb-20 reveal">
-         <h2 class="text-3xl font-mono text-secondary-cyan mb-8 text-center">Your Detailed 16-Week Journey</h2>
+         <h2 class="text-3xl font-mono mb-8 text-center" data-text="Your Detailed 16-Week Journey">Your Detailed 16-Week Journey</h2>
          <p class="font-sans text-holo-silver mb-12 text-center max-w-2xl mx-auto">This chronological roadmap breaks down your study into manageable weekly themes, topics, and hands-on lab focus areas, guiding you from fundamentals to final review.</p>
          <div class="relative timeline-container ml-4 pl-8">
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week One</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Orientation + Plan & Manage AI</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Orientation + Plan & Manage AI">Orientation + Plan & Manage AI</h3>
                 <p class="text-gray-300 mt-2">Topics: Azure AI Services overview, solution planning, cost/performance tradeoffs, Responsible AI, versioning, CI/CD. <br> Lab Focus: Deploying Cognitive Services; building pipelines. <br> Evening: Cornell notes on architecture & governance.</p>
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Two</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">More Planning + Responsible AI</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="More Planning + Responsible AI">More Planning + Responsible AI</h3>
                 <p class="text-gray-300 mt-2">Topics: Deployment containers, privacy/compliance, monitoring, resource optimization, A/B testing. <br> Lab Focus: Deploy services using Docker + manage with Azure Monitor. <br> Evening: Create cheat-sheet on planning architecture.</p>
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Weeks Three to Five</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">NLP Solutions Deep Dive</h3>
-                <div class="prose prose-invert max-w-none">
-                    <ul class="ul-topics">
+                <h3 class="text-xl font-bold mt-1" data-text="NLP Solutions Deep Dive">NLP Solutions Deep Dive</h3>
+                <div class="list-style-gt text-gray-300 mt-2">
+                    <ul>
                         <li>Named entity recognition, sentiment analysis</li>
                         <li>Text summarization & classification</li>
                         <li>Language understanding (LUIS → CLU transition)</li>
@@ -79,19 +81,19 @@ title: AI Study Guide
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Weeks Six to Seven</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Conversational AI & Bot Framework</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Conversational AI & Bot Framework">Conversational AI & Bot Framework</h3>
                 <p class="text-gray-300 mt-2">Topics: Azure Bot Service, QnA Maker/Language Studio QnA, Direct Line API, Adaptive dialogs, telemetry. <br> Projects: Deploy a bot via Webchat + enable logging. <br> Evening: Write summary sheets on bot architecture.</p>
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Weeks Eight to Nine </p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Computer Vision</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Computer Vision">Computer Vision</h3>
                 <p class="text-gray-300 mt-2">Topics: OCR, image tagging, object detection, face analysis, custom vision training. <br> Lab Focus: Train and evaluate a custom vision model. <br> Project: Containerize and deploy a CV model. <br> Evening: Diagram use cases for each CV API.</p>
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Weeks Ten to Eleven</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Generative AI & Prompting</h3>
-                <div class="prose prose-invert max-w-none">
-                    <ul class="ul-topics">
+                <h3 class="text-xl font-bold mt-1" data-text="Generative AI & Prompting">Generative AI & Prompting</h3>
+                <div class="list-style-gt text-gray-300 mt-2">
+                    <ul>
                         <li>Prompt engineering for text/image/code</li>
                         <li>Model grounding, embeddings</li>
                         <li>Fine-tuning OpenAI models</li>
@@ -102,27 +104,27 @@ title: AI Study Guide
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Twelve</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Agentic Solutions</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Agentic Solutions">Agentic Solutions</h3>
                 <p class="text-gray-300 mt-2">Topics: The concept of an “agentic AI system,” LangChain/Semantic Kernel, task orchestration, and grounding external APIs. <br> Lab Focus: Build a small LangChain assistant in Azure. <br> Evening: Note limitations + evaluate flowcharts.</p>
             </div>
             <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Thirteen</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Knowledge Mining</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Knowledge Mining">Knowledge Mining</h3>
                 <p class="text-gray-300 mt-2">Topics: Azure Cognitive Search, custom indexing, enrichment, Document Intelligence/Form Recognizer. <br> Lab Focus: Index PDFs, run an enrichment pipeline, extract tables. <br> Evening: Draw architecture diagrams for integration.</p>
             </div>
              <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Fouteen</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">End-to-End Solution Integration</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="End-to-End Solution Integration">End-to-End Solution Integration</h3>
                 <p class="text-gray-300 mt-2">Topics: Combine NLP + CV + Search in a pipeline. <br> Project: Build a pipeline to scan a document, extract key info, search, and respond. <br> Evening: Troubleshoot and note performance tuning ideas.</p>
             </div>
              <div class="mb-8 relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Fifteen</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Practice Exams & Reinforcement</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Practice Exams & Reinforcement">Practice Exams & Reinforcement</h3>
                 <p class="text-gray-300 mt-2">Goal: Take 2–3 full practice exams in the morning. <br> Activities: Dissect all wrong answers, update flashcards, and reinforce weak areas based on your results.</p>
             </div>
              <div class="relative card p-6">
                 <p class="text-sm font-semibold text-secondary-cyan">Week Sixteen (Nov 21–Nov 28)</p>
-                <h3 class="text-xl font-bold text-primary-red mt-1">Exam Polish & Readiness</h3>
+                <h3 class="text-xl font-bold mt-1" data-text="Exam Polish & Readiness">Exam Polish & Readiness</h3>
                 <p class="text-gray-300 mt-2">Activities: Simulate real exam conditions with 1 mock every 3 days. Do a light review of 1-pagers & flashcards. Final review of Responsible AI, governance, and cost planning. Rest on November 28.</p>
             </div>
          </div>
@@ -131,200 +133,81 @@ title: AI Study Guide
     <div class="section-divider"></div>
 
    <section id="techniques" class="mb-16 reveal">
-        <h2 class="text-3xl font-mono text-secondary-cyan mb-8 text-center">Study Techniques Explained</h2>
+        <h2 class="text-3xl font-mono mb-8 text-center" data-text="Study Techniques Explained">Study Techniques Explained</h2>
         <p class="font-sans text-holo-silver mb-12 text-center max-w-2xl mx-auto">This set of techniques, used throughout your study, is designed to maximize memory retention and deep understanding.</p>
         
         <div class="scroller-container group">
             <div class="scroller-inner">
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🧠</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Active Recall</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Active Recall">Active Recall</h3>
                     <p class="text-gray-300 mt-2 text-sm">The practice of self-testing before reading notes. The effort of retrieving information strengthens neural pathways for much stronger long-term retention.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">📅</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Spaced Repetition</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Spaced Repetition">Spaced Repetition</h3>
                     <p class="text-gray-300 mt-2 text-sm">Reviewing information at strategically increasing intervals, right before you're about to forget them, which reinforces memory more effectively.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🔀</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Interleaving</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Interleaving">Interleaving</h3>
                     <p class="text-gray-300 mt-2 text-sm">Mixing related topics during review sessions to build a more flexible understanding and to recognize subtle differences between services.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">✍️</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Cornell Notes</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Cornell Notes">Cornell Notes</h3>
                     <p class="text-gray-300 mt-2 text-sm">A structured note-taking system to reflect on and organize your learning after each module, making it easier to self-quiz and create cheat-sheets.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🧠</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Mind Mapping</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Mind Mapping">Mind Mapping</h3>
                     <p class="text-gray-300 mt-2 text-sm">A visual technique for organizing information that helps you draw connections between different APIs, service relationships, and data flow.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🧪</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Practice by Doing</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Practice by Doing">Practice by Doing</h3>
                     <p class="text-gray-300 mt-2 text-sm">Prioritizing hands-on labs and SDK integration over passive reading to deepen your understanding and expose yourself to common failure modes.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🧩</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Cheat-Sheet Synthesis</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Cheat-Sheet Synthesis">Cheat-Sheet Synthesis</h3>
                     <p class="text-gray-300 mt-2 text-sm">The process of creating weekly 1-page summaries with key commands, use cases, and limits for each service to distill complex information.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0">
                     <div class="text-5xl mb-4 text-center">🧘</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Reflection Journaling</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Reflection Journaling">Reflection Journaling</h3>
                     <p class="text-gray-300 mt-2 text-sm">At the end of each week, writing down what you have mastered and what is still fuzzy to force cognitive closure and consolidate your learning.</p>
                 </div>
 
+                <!-- Duplicates for seamless scroll effect -->
                 <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
                     <div class="text-5xl mb-4 text-center">🧠</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Active Recall</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Active Recall">Active Recall</h3>
                     <p class="text-gray-300 mt-2 text-sm">The practice of self-testing before reading notes. The effort of retrieving information strengthens neural pathways for much stronger long-term retention.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
                     <div class="text-5xl mb-4 text-center">📅</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Spaced Repetition</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Spaced Repetition">Spaced Repetition</h3>
                     <p class="text-gray-300 mt-2 text-sm">Reviewing information at strategically increasing intervals, right before you're about to forget them, which reinforces memory more effectively.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
                     <div class="text-5xl mb-4 text-center">🔀</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Interleaving</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Interleaving">Interleaving</h3>
                     <p class="text-gray-300 mt-2 text-sm">Mixing related topics during review sessions to build a more flexible understanding and to recognize subtle differences between services.</p>
                 </div>
                 <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
                     <div class="text-5xl mb-4 text-center">✍️</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Cornell Notes</h3>
+                    <h3 class="text-xl font-bold text-center" data-text="Cornell Notes">Cornell Notes</h3>
                     <p class="text-gray-300 mt-2 text-sm">A structured note-taking system to reflect on and organize your learning after each module, making it easier to self-quiz and create cheat-sheets.</p>
-                </div>
-                <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
-                    <div class="text-5xl mb-4 text-center">🧠</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Mind Mapping</h3>
-                    <p class="text-gray-300 mt-2 text-sm">A visual technique for organizing information that helps you draw connections between different APIs, service relationships, and data flow.</p>
-                </div>
-                <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
-                    <div class="text-5xl mb-4 text-center">🧪</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Practice by Doing</h3>
-                    <p class="text-gray-300 mt-2 text-sm">Prioritizing hands-on labs and SDK integration over passive reading to deepen your understanding and expose yourself to common failure modes.</p>
-                </div>
-                <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
-                    <div class="text-5xl mb-4 text-center">🧩</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Cheat-Sheet Synthesis</h3>
-                    <p class="text-gray-300 mt-2 text-sm">The process of creating weekly 1-page summaries with key commands, use cases, and limits for each service to distill complex information.</p>
-                </div>
-                <div class="card p-6 w-[350px] flex-shrink-0" aria-hidden="true">
-                    <div class="text-5xl mb-4 text-center">🧘</div>
-                    <h3 class="text-xl font-bold text-primary-red text-center">Reflection Journaling</h3>
-                    <p class="text-gray-300 mt-2 text-sm">At the end of each week, writing down what you have mastered and what is still fuzzy to force cognitive closure and consolidate your learning.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="text-center mt-16 pt-8 border-t border-border-dark">
-        <p class="font-sans text-holo-silver">This infographic was created to help you succeed. Stay focused, stick to the plan, and good luck!</p>
+        <p class="font-sans text-holo-silver">Stay focused, stick to the plan, and good luck!</p>
     </footer>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // --- START OF NEW CHART SCRIPT ---
-
-    // 1. HELPER FUNCTION to wrap long legend labels
-    function wrapText(str, maxWidth) {
-        const words = str.split(' ');
-        let lines = [];
-        let currentLine = words[0];
-
-        for (let i = 1; i < words.length; i++) {
-            if (currentLine.length + words[i].length + 1 < maxWidth) {
-                currentLine += ' ' + words[i];
-            } else {
-                lines.push(currentLine);
-                currentLine = words[i];
-            }
-        }
-        lines.push(currentLine);
-        return lines;
-    }
-
-    // 2. CHART DATA with wrapped labels and enhanced hover effect
-    const domainData = {
-        labels: [
-            'Plan & Manage Azure AI Solutions',
-            'Implement Generative AI',
-            'Implement Agentic Solutions',
-            'Implement Computer Vision',
-            'NLP Solutions',
-            'Knowledge Mining & Document Intelligence'
-        ].map(label => wrapText(label, 25)), // Using the wrapText function
-        datasets: [{
-            label: 'Exam Domain Weight',
-            data: [17.5, 17.5, 7.5, 12.5, 32.5, 12.5],
-            backgroundColor: [
-                '#ff2c2c', '#00ffff', '#39ff14', '#eaff00', '#8f00ff', '#ff6600'
-            ],
-            borderColor: '#0a0a0a',
-            borderWidth: 4,
-            hoverOffset: 30 // Increased "pop out" effect on hover
-        }]
-    };
-
-    // 3. CHART OPTIONS, moved here for cleaner code
-    const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                position: 'bottom',
-                labels: {
-                    color: '#f0f0f0',
-                    font: { size: 12 },
-                    boxWidth: 20,
-                    padding: 20,
-                }
-            },
-            tooltip: {
-                callbacks: {
-                    // Re-join wrapped labels for the tooltip title
-                    title: function(tooltipItems) {
-                        const label = tooltipItems[0].label;
-                        return Array.isArray(label) ? label.join(' ') : label;
-                    },
-                    label: function(context) {
-                        let label = context.dataset.label || '';
-                        if (label) { label += ': '; }
-                        if (context.parsed !== null) { label += context.parsed + '%'; }
-                        return label;
-                    }
-                }
-            }
-        },
-        cutout: '60%'
-    };
-
-    // 4. INTERSECTION OBSERVER to trigger animation on scroll
-    const chartCanvas = document.getElementById('domainWeightsChart');
-    if (chartCanvas) {
-        const chartObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Initialize the chart ONLY when it becomes visible
-                    new Chart(chartCanvas, {
-                        type: 'doughnut',
-                        data: domainData,
-                        options: chartOptions
-                    });
-                    // Stop observing once the chart is created to prevent re-animation
-                    observer.unobserve(chartCanvas);
-                }
-            });
-        }, { threshold: 0.5 }); // Trigger when 50% of the chart is visible
-
-        // Start observing the chart canvas
-        chartObserver.observe(chartCanvas);
-    }
-
-    // --- END OF NEW CHART SCRIPT ---
-</script>
+<!-- NOTE: The D3 and neural-hub.js scripts should be loaded in _layouts/default.html -->
