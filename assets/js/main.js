@@ -39,4 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     revealObserver.observe(element);
   });
 
+  // NOTE: The JavaScript-based glitch effect has been removed.
+  // The new effect is handled entirely by CSS for better performance
+  // and is automatically applied to all h1, h2, and h3 tags.
+
 });

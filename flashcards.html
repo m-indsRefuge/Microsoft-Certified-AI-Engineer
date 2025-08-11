@@ -3,5 +3,149 @@ layout: default
 title: Flashcards
 ---
 
-<h1 class="text-4xl font-bold text-teal-400">Flashcards</h1>
-<p class="mt-4 text-gray-300">Content for the flashcards page will go here.</p>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-12">
+        <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-mono uppercase tracking-wider" data-text="System Link: Active Recall">System Link: Active Recall</h1>
+            <p class="mt-4 text-lg font-sans !text-neon-green max-w-3xl mx-auto">
+                Cycle through AI-102 flashcard data streams. <br> Filter by category to isolate specific knowledge packets.
+            </p>
+        </div>
+    </header>
+
+    <div 
+        x-data="flashcardTerminal()" 
+        x-init="init()"
+        class="bg-card-bg border border-border-dark rounded-xl shadow-2xl p-4 md:p-6 font-mono !text-neon-green max-w-4xl mx-auto"
+    >
+        <div class="mb-4 pb-4 border-b border-border-dark">
+            <p class="text-sm text-neon-green mb-2">> LOAD KNOWLEDGE PACKET:</p>
+            <div class="flex flex-wrap gap-2">
+                <button @click="setFilter('All')" :class="{ 'bg-secondary-cyan text-deep-black': activeFilter === 'All' }" class="btn text-xs !py-1 !px-2">ALL</button>
+                <template x-for="category in uniqueCategories" :key="category">
+                    <button 
+                        @click="setFilter(category)" 
+                        :class="{ 'bg-secondary-cyan text-deep-black': activeFilter === category }"
+                        class="btn text-xs !py-1 !px-2"
+                        x-text="category"
+                    ></button>
+                </template>
+            </div>
+        </div>
+
+        <div class="min-h-[200px] text-text-light p-2" x-show="currentCard">
+            <p class="mb-2"><span class="text-primary-red" x-text="`[CARD #${String(currentIndex + 1).padStart(3, '0')}]`"></span></p>
+            <p class="font-sans text-lg"><span class="text-secondary-cyan mr-2">></span><span x-text="currentCard.question"></span></p>
+            
+            <template x-if="isFlipped">
+                <div class="mt-4 p-4 border border-dashed border-secondary-cyan/50 bg-deep-black/30 rounded-lg">
+                    <p class="font-sans text-lg text-neon-green" x-text="currentCard.answer"></p>
+                </div>
+            </template>
+        </div>
+        
+        <div class="min-h-[200px] text-center p-8" x-show="!currentCard">
+             <p class="text-holo-silver">> NO DATA PACKETS FOUND FOR THIS FILTER.</p>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-border-dark">
+            <p class="text-sm text-holo-silver">> awaiting command...</p>
+            <div class="flex flex-wrap items-center gap-4 mt-2">
+                <button @click="isFlipped = !isFlipped" class="btn">
+                    <span x-show="!isFlipped">REVEAL ANSWER</span>
+                    <span x-show="isFlipped">HIDE ANSWER</span>
+                </button>
+                
+                <div class="flex gap-2">
+                    <button @click="prevCard()" :disabled="currentIndex === 0" class="btn !p-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button @click="nextCard()" :disabled="currentIndex >= filteredFlashcards.length - 1" class="btn !p-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <div class="flex justify-between text-xs text-neon-green mb-1">
+                <span x-text="`[${activeFilter}]`"></span>
+                <span x-text="`${currentIndex + 1} / ${filteredFlashcards.length}`"></span>
+            </div>
+            <div class="w-full bg-deep-black border border-border-dark h-4 p-0.5">
+                <div class="bg-primary-red h-full" :style="`width: ${((currentIndex + 1) / filteredFlashcards.length) * 100}%`"></div>
+            </div>
+            <p class="text-center text-xs text-neon-green mt-1">ACTIVE RECALL PROGRESS</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function flashcardTerminal() {
+        return {
+            flashcards: [],
+            filteredFlashcards: [],
+            uniqueCategories: [],
+            currentIndex: 0,
+            currentCard: null,
+            isFlipped: false,
+            activeFilter: 'All',
+
+            init() {
+                // Use Jekyll's `jsonify` filter to safely convert CSV data to a JSON string
+                this.flashcards = {{ site.data.ai102_flashcards | jsonify }};
+
+                // Extract unique categories from the 'tags' column
+                const categories = new Set();
+                this.flashcards.forEach(card => {
+                    // Assuming tags can be a comma-separated string
+                    card.tags.split(',').forEach(tag => categories.add(tag.trim()));
+                });
+                this.uniqueCategories = Array.from(categories).sort();
+                
+                this.setFilter('All');
+            },
+
+            setFilter(category) {
+                this.activeFilter = category;
+                this.isFlipped = false;
+                this.currentIndex = 0;
+
+                if (category === 'All') {
+                    this.filteredFlashcards = this.flashcards;
+                } else {
+                    this.filteredFlashcards = this.flashcards.filter(card => 
+                        card.tags.split(',').map(t => t.trim()).includes(category)
+                    );
+                }
+                
+                this.updateCurrentCard();
+            },
+
+            nextCard() {
+                if (this.currentIndex < this.filteredFlashcards.length - 1) {
+                    this.currentIndex++;
+                    this.isFlipped = false;
+                    this.updateCurrentCard();
+                }
+            },
+
+            prevCard() {
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.isFlipped = false;
+                    this.updateCurrentCard();
+                }
+            },
+            
+            updateCurrentCard() {
+                if(this.filteredFlashcards.length > 0) {
+                    this.currentCard = this.filteredFlashcards[this.currentIndex];
+                } else {
+                    this.currentCard = null;
+                }
+            }
+        }
+    }
+</script>

@@ -9,15 +9,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-red': '#ff003c',
-        'secondary-cyan': '#00aaff',
+        'primary-red': '#D6003B',
+        'secondary-cyan': '#0099dd',
         'deep-black': '#0a0a0a',
-        'text-light': '#f0f0f0',
+        'text-light': '#fff0f6',
         'muted-gray': '#888888',
-        'card-bg': 'rgba(17, 17, 17, 0.75)',
-        'border-dark': '#222222',
-        'neon-pink': '#ff00ff',
-        'neon-green': '#39ff14',
+        'card-bg': 'rgba(15, 15, 20, 0.70)',
+        'border-dark': 'rgba(60, 31, 46, 0.7)',
+        'neon-pink': '#FF1ACC',
+        'neon-green': '#39ff14', // Existing neon green
+        'neon-red': '#FF073A',   // NEW - Intense neon red for glitch
         'acid-yellow': '#eaff00',
         'ultraviolet': '#8f00ff',
         'glitch-orange': '#ff6600',
@@ -32,16 +33,14 @@ module.exports = {
         'biohazard-yellow': '#ffff33',
       },
       fontFamily: {
-        // For body text (applied with the 'font-sans' class)
-        'sans': ['Share Tech Mono', 'monospace'],
-        // For headings (applied with the 'font-mono' class)
+        'sans': ['Quantico', 'monospace'],
         'mono': ['Jetbrains Mono', 'sans-serif'],
-      }, // The extra brace that was here has been removed.
+      },
       boxShadow: {
-        'neon-cyan': '0 0 10px var(--tw-shadow-color)',
+        'neon-cyan': '0 0 3px var(--tw-shadow-color)',
       },
       transitionDuration: {
-        600: '600ms', // Added so `duration-600` works
+        600: '600ms',
       },
       keyframes: {
         neonPulse: {

@@ -7,7 +7,7 @@ title: Summaries
 
     <header class="text-center mb-16">
         <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl">
-            <h1 class="text-4xl md:text-5xl font-mono text-secondary-cyan uppercase tracking-wider static-glow">Study Summaries</h1>
+            <h1 class="text-4xl md:text-5xl font-mono uppercase tracking-wider" data-text="Study Summaries">Study Summaries</h1>
             <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto">
                 An interactive timeline of all notes, mind maps, and learning activities from the AI-102 journey.
             </p>
@@ -25,7 +25,7 @@ title: Summaries
                         <div class="card p-6">
                             <div class="prose prose-invert max-w-none">
                                 <p class="!text-sm !text-secondary-cyan">{{ summary.date | date: "%B %d, %Y" }}</p>
-                                <h2 class="!text-2xl !font-bold !text-primary-red !mt-1">{{ summary.title }}</h2>
+                                <h2 class="!text-2xl !font-bold !mt-1" data-text="{{ summary.title }}">{{ summary.title }}</h2>
                                 <p class="!text-sm">{{ summary.summary }}</p>
                                 
                                 <a href="{{ summary.url | relative_url }}" class="btn !no-underline !bg-primary-red !text-deep-black mt-4 !py-1 !px-2 !text-sm">Read More</a>

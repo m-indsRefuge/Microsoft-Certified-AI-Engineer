@@ -1,0 +1,160 @@
+---
+layout: default
+title: "Ctrl + Alt + Who"
+---
+
+<div x-data="{ isRevealed: false }" x-init="setTimeout(() => { isRevealed = true }, 3000)" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <div 
+        x-show="!isRevealed" 
+        class="fixed inset-0 bg-deep-black flex items-center justify-center z-50"
+    >
+        <p class="font-mono text-2xl text-neon-green hologram-text animate-pulse">> who is nolan augustine_</p>
+    </div>
+
+    <main x-show="isRevealed" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" style="display: none;">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-mono uppercase tracking-wider mb-4" data-text="Identity Decrypted">Identity Decrypted</h1>
+            <p class="text-lg font-sans text-holo-silver max-w-3xl mx-auto">
+                A dynamic profile matrix blending code, creativity, and the core philosophies that drive my work in the world of artificial intelligence.
+            </p>
+        </header>
+
+        <div class="section-divider"></div>
+
+        <section class="mb-20">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div x-data="{ isFlipped: false }" @mouseenter="isFlipped = true" @mouseleave="isFlipped = false" class="card p-2 w-full max-w-sm mx-auto aspect-square">
+                    <div class="relative w-full h-full">
+                         <img x-show="!isFlipped" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" src="{{ '/assets/img/NolanAug - Website Profile Pic.jpg' | relative_url }}" alt="Nolan Augustine Profile" class="object-cover w-full h-full">
+                        <video x-show="isFlipped" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="object-cover w-full h-full" autoplay loop muted playsinline>
+                            <source src="{{ '/assets/video/NolanAug Avatar.mp4' | relative_url }}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div x-data="{ expandedNode: null }" class="space-y-4">
+                    <h2 class="text-3xl font-mono mb-4 text-center md:text-left" data-text="Core Nodes">Core Nodes</h2>
+                    <div class="card text-center p-4 cursor-pointer" @click="expandedNode = expandedNode === 'ai' ? null : 'ai'">
+                        <h3 class="text-xl font-bold" data-text="AI Engineer">AI Engineer</h3>
+                        <div x-show="expandedNode === 'ai'" x-transition><p class="font-sans text-sm text-muted-gray mt-2">I specialize in building and deploying intelligent solutions on Azure, leveraging services like Azure OpenAI and Machine Learning to create applications that understand, reason, and interact in a human-like way.</p></div>
+                    </div>
+                    <div class="card text-center p-4 cursor-pointer" @click="expandedNode = expandedNode === 'creative' ? null : 'creative'">
+                        <h3 class="text-xl font-bold" data-text="Creative Technologist">Creative Technologist</h3>
+                        <div x-show="expandedNode === 'creative'" x-transition><p class="font-sans text-sm text-muted-gray mt-2">My work lives at the intersection of code and art. This website is a testament to that philosophy—a place where the cyberpunk aesthetic is a narrative device for exploring ideas about our digital future.</p></div>
+                    </div>
+                    <div class="card text-center p-4 cursor-pointer" @click="expandedNode = expandedNode === 'learner' ? null : 'learner'">
+                        <h3 class="text-xl font-bold" data-text="Lifelong Learner">Lifelong Learner</h3>
+                        <div x-show="expandedNode === 'learner'" x-transition><p class="font-sans text-sm text-muted-gray mt-2">The field of AI evolves daily, and my commitment is to evolve with it. This journey toward certification is one step in a much longer path of discovery and hands-on application.</p></div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="mb-20" x-data="philosophyTerminal()"><h2 class="text-3xl font-mono mb-8 text-center" data-text="Query Philosophy">Query Philosophy</h2>
+            <div class="bg-card-bg border border-border-dark rounded-xl shadow-2xl p-4 md:p-6 font-mono text-neon-green max-w-4xl mx-auto">
+                <p class="text-sm text-holo-silver mb-2">> SELECT QUERY:</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <template x-for="(item, index) in questions" :key="index"><button @click="selectQuestion(index)" :class="{ 'bg-secondary-cyan text-deep-black': selectedQuestionIndex === index }" class="btn text-xs !py-1 !px-2" x-text="item.query"></button></template>
+                </div>
+                <div class="min-h-[100px] bg-deep-black/30 p-4 rounded-lg"><p class="font-sans text-text-light" x-html="displayedAnswer"></p></div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="mb-20"><h2 class="text-3xl font-mono mb-12 text-center" data-text="Journey Log">Journey Log</h2>
+            <div class="relative timeline-container mx-auto max-w-2xl">
+                <div class="mb-8 flex justify-between items-center w-full right-timeline"><div class="order-1 w-5/12"></div><div class="z-20 flex items-center order-1 bg-primary-red shadow-xl w-8 h-8 rounded-full"><h1 class="mx-auto font-semibold text-lg text-deep-black">1</h1></div><div class="order-1 card w-5/12 p-4"><p class="text-sm font-semibold text-secondary-cyan">2018</p><h3 class="text-lg font-bold mt-1" data-text="First Spark">First Spark</h3><p class="text-xs font-sans text-muted-gray mt-2">Began exploring Python for data analysis, discovering a passion for machine learning concepts and algorithms.</p></div></div>
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"><div class="order-1 w-5/12"></div><div class="z-20 flex items-center order-1 bg-primary-red shadow-xl w-8 h-8 rounded-full"><h1 class="mx-auto font-semibold text-lg text-deep-black">2</h1></div><div class="order-1 card w-5/12 p-4"><p class="text-sm font-semibold text-secondary-cyan">2021</p><h3 class="text-lg font-bold mt-1" data-text="Cloud Transition">Cloud Transition</h3><p class="text-xs font-sans text-muted-gray mt-2">Shifted focus to cloud computing, achieving the Azure Fundamentals certification and deploying my first web applications.</p></div></div>
+                <div class="mb-8 flex justify-between items-center w-full right-timeline"><div class="order-1 w-5/12"></div><div class="z-20 flex items-center order-1 bg-primary-red shadow-xl w-8 h-8 rounded-full"><h1 class="mx-auto font-semibold text-lg text-deep-black">3</h1></div><div class="order-1 card w-5/12 p-4"><p class="text-sm font-semibold text-secondary-cyan">2023</p><h3 class="text-lg font-bold mt-1" data-text="AI Specialization">AI Specialization</h3><p class="text-xs font-sans text-muted-gray mt-2">Committed to specializing in AI, began deep-diving into Azure AI Services and designing intelligent application architectures.</p></div></div>
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"><div class="order-1 w-5/12"></div><div class="z-20 flex items-center order-1 bg-primary-red shadow-xl w-8 h-8 rounded-full"><h1 class="mx-auto font-semibold text-lg text-deep-black">4</h1></div><div class="order-1 card w-5/12 p-4"><p class="text-sm font-semibold text-secondary-cyan">Today</p><h3 class="text-lg font-bold mt-1" data-text="The AI-102 Mission">The AI-102 Mission</h3><p class="text-xs font-sans text-muted-gray mt-2">This project and study journey represents the synthesis of my skills—a focused mission to achieve the Azure AI Engineer Associate certification.</p></div></div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="mb-20">
+            <h2 class="text-3xl font-mono mb-8 text-center" data-text="Experience Dossier">Experience Dossier</h2>
+            <div class="card p-6 md:p-8">
+                <p class="font-sans text-holo-silver text-center mb-8">Versatile technology professional with 8+ years in IT support, operations, and systems administration, now driving toward advanced AI engineering and SecDevOps leadership. Blending Microsoft Azure expertise with hands-on AI development, I design secure, scalable, and intelligent systems — from locally hosted reasoning engines to cloud-native pipelines.</p>
+                <div class="text-center mb-12">
+                     <a href="{{ '/assets/downloads/Nolan_Augustine_CVTechnicalV1.pdf' | relative_url }}" download class="btn"> > DOWNLOAD CURRICULUM VITAE (.ZIP)</a>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-6 text-center" data-text="Core Technical Skills">Core Technical Skills</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan mb-2">Programming & Scripting</h4><p class="text-sm text-muted-gray">Python, JavaScript (ES6+), Node.js, PowerShell</p></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan mb-2">Frontend & UI</h4><p class="text-sm text-muted-gray">React, Vite, Tailwind CSS</p></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan mb-2">Cloud & DevOps</h4><p class="text-sm text-muted-gray">Microsoft Azure (VMs, Networking, Security), Cloudflare Workers, Durable Objects, GitHub Actions, Ngrok</p></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan mb-2">AI & ML</h4><p class="text-sm text-muted-gray">LLM integration, LangChain, fine-tuning, local-first AI architectures</p></div>
+                </div>
+
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center" data-text="Selected Projects">Selected Projects</h3>
+                <div class="space-y-6">
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">AI-102 Study Journey Website</h4><p class="text-xs text-holo-silver mb-2">Tech: Python, Vite, React, Node.js, JavaScript, Tailwind CSS</p><p class="text-sm font-sans text-muted-gray">Designed and deployed an interactive AI-assisted learning platform for Microsoft AI-102 certification preparation. Integrated AI-powered content modules, progress tracking, and dynamic styling for an engaging learning experience.</p></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">Reviviscere Engine</h4><p class="text-xs text-holo-silver mb-2">Tech: Node.js, Cloudflare Workers, Durable Objects, Ollama, Ngrok, PowerShell, LangChain, R2, D1, GitHub Actions</p><p class="text-sm font-sans text-muted-gray">Built a multi-agent reasoning engine simulating neural-like collaboration between AI agents. Engineered real-time memory orchestration, hallucination/drift safeguards, and meta-cognitive reflection protocols.</p></div>
+                </div>
+                
+                <h3 class="text-2xl font-bold mt-12 mb-6 text-center" data-text="Professional Experience">Professional Experience</h3>
+                 <div class="space-y-6">
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">Operations Manager – JD Kustom (2017–2023)</h4><p class="text-sm font-sans text-muted-gray">Directed operations, HR, logistics, and client relations; boosted production efficiency by 40% and digital engagement by 35%.</p></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">Stores Manager – YNF Engineering (2015–2016)</h4><ul class="list-disc list-inside text-sm font-sans text-muted-gray mt-2"><li>Managed stock control and budgets, reducing costs and waste by 15%.</li><li>Delivered staff training and reported directly to executive leadership.</li></ul></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">Production Supervisor – Marble Gold Food Technology (2014–2015)</h4><ul class="list-disc list-inside text-sm font-sans text-muted-gray mt-2"><li>Oversaw production, HR, and customer onboarding processes.</li><li>Achieved first-ever 24-hour continuous production run.</li></ul></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">IT Administrator – iWyze IT (Mutual & Federal) (2012–2014)</h4><ul class="list-disc list-inside text-sm font-sans text-muted-gray mt-2"><li>Delivered end-to-end desktop, network, and software support; managed 400+ IT support tickets/month.</li><li>Achieved 60% improvement in response/resolution times by refining processes.</li><li>Administered Active Directory for user provisioning and access control.</li></ul></div>
+                    <div class="card !p-4"><h4 class="font-bold text-secondary-cyan">Support Desk Technician – Nomad Information Systems (2009–2012)</h4><ul class="list-disc list-inside text-sm font-sans text-muted-gray mt-2"><li>Provided frontline remote desktop support, resolving system and application issues.</li><li>Led ticket resolution rate, improving support efficiency by 45%.</li><li>Documented incidents, created SOPs, and guided users through troubleshooting.</li></ul></div>
+                </div>
+
+                 <h3 class="text-2xl font-bold mt-12 mb-6 text-center" data-text="Education & Certifications">Education & Certifications</h3>
+                <div class="card !p-4">
+                    <h4 class="font-bold text-secondary-cyan mb-2">Education</h4><p class="text-sm font-sans text-muted-gray">National Senior Certificate, 2022</p>
+                    <h4 class="font-bold text-secondary-cyan mt-4 mb-2">Certifications</h4>
+                    <ul class="list-disc list-inside text-sm font-sans text-muted-gray">
+                        <li>Microsoft Certified: Azure Administrator Associate (AZ-104)</li>
+                        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+                        <li>Microsoft Certified: Security, Compliance & Identity Fundamentals (SC-900)</li>
+                        <li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>
+                        <li>IBM SkillsBuild: Cybersecurity, Cloud, AI Fundamentals, Agile, Design</li>
+                        <li>IBM SkillsBuild: Cybersecurity, Cloud, AI Fundamentals, Agile, Design</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    function philosophyTerminal() {
+        return {
+            selectedQuestionIndex: 0,
+            displayedAnswer: '',
+            questions: [
+                { query: 'Motivation', answer: 'I am driven by a deep curiosity about how intelligence—both natural and artificial—can be leveraged to solve meaningful problems. For me, AI is not just about automation; it is about augmentation, extending our own creative and intellectual capabilities.' },
+                { query: 'Philosophy on AI', answer: 'I believe AI should be developed with a "human-in-the-loop" philosophy. It should be transparent, ethical, and designed to empower, not replace. My goal is to build systems that are not only powerful but also trustworthy and aligned with human values.' },
+                { query: 'Learning Process', answer: 'I learn by building. Theory is essential, but true understanding comes from hands-on application, from debugging broken code at 2 AM, and from seeing a model make its first correct prediction. This project is a core part of my learning process.' },
+                { query: 'Future of AI', answer: 'The future of AI is collaborative. It is in the seamless integration of specialized models, the rise of agentic systems that can reason and plan, and the accessibility of these powerful tools to creators and innovators from all fields.' }
+            ],
+            init() { this.selectQuestion(0); },
+            selectQuestion(index) {
+                this.selectedQuestionIndex = index;
+                this.typewriterEffect(this.questions[index].answer);
+            },
+            typewriterEffect(text) {
+                let i = 0;
+                this.displayedAnswer = '';
+                const speed = 20;
+                const type = () => { if (i < text.length) { this.displayedAnswer += text.charAt(i); i++; setTimeout(type, speed); } };
+                type();
+            }
+        }
+    }
+</script>
+
+<style>
+.timeline-container::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background-color: #3C1F2E; }
+</style>

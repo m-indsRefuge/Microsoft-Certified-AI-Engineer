@@ -1,7 +1,7 @@
 # Basic Jekyll Configuration for Microsoft Certified AI Engineer
 
 # Site settings
-title: AI-12 Study Journey
+title: AI-102 Study Journey
 email: nolanaug@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal study journey and public resource hub for the Microsoft AI-102 Certification.

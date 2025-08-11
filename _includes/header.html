@@ -1,35 +1,81 @@
-<header class="bg-deep-black shadow-lg py-4 border-b border-border-dark">
-    <nav class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-<a href="{{ '/' | relative_url }}" class="text-3xl font-orbitron font-bold text-neon-purple uppercase tracking-wider hover:text-holo-silver static-glow transition-colors duration-300 mb-4 sm:mb-0">
-<span class="material-symbols-outlined">
-heart_minus
-</span> AI-102 
-</a>
-        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <a href="{{ '/' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">home</span>
-                Home
-            </a>
-            <a href="{{ '/study-guide.html' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">menu_book</span>
-                Study Guide
-            </a>
-            <a href="{{ '/flashcards.html' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">collections_bookmark</span>
-                Flashcards
-            </a>
-            <a href="{{ '/summaries.html' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">summarize</span>
-                Summaries
-            </a>
-            <a href="{{ '/vlogs.html' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">video_library</span>
-                Vlogs
-            </a>
-            <a href="{{ '/resources.html' | relative_url }}" class="flex items-center gap-2 text-neon-green hover:text-holo-silver font-mono font-semibold transition-colors duration-300 uppercase tracking-wider">
-                <span class="material-symbols-outlined text-lg">deployed_code</span>
-                Resources
-            </a>
+<header 
+    x-data="headerComponent()" 
+    x-init="initClock()"
+    class="bg-card-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-border-dark shadow-lg"
+>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+            
+            <div class="flex flex-col items-center">
+                <div class="font-mono text-lg md:text-xl text-neon-green hologram-text">
+                    {% if page.title and page.url != "/" %}
+                        {{ page.title }}
+                    {% else %}
+                        {{ site.title }}
+                    {% endif %}
+                </div>
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <span class="text-holo-silver">STATUS:</span>
+                    <span 
+                        class="font-bold uppercase px-1 rounded-sm"
+                        :class="{
+                            'text-secondary-cyan': systemStatus === 'NOMINAL',
+                            'text-neon-yellow': systemStatus === 'WARNING',
+                            'text-primary-red': systemStatus === 'ERROR'
+                        }"
+                        x-text="systemStatus"
+                    ></span>
+                </div>
+            </div>
+
+            <div class="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                <div class="font-mono text-secondary-cyan text-sm" x-text="currentTime"></div>
+                <button @click="isOpen = !isOpen" class="text-text-light hover:text-secondary-cyan">
+                    <span x-show="!isOpen" class="material-symbols-outlined">menu</span>
+                    <span x-show="isOpen" class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
         </div>
-    </nav>
+    </div>
+
+    <div 
+        x-show="isOpen"
+        @click.away="isOpen = false"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform -translate-x-full"
+        x-transition:enter-end="opacity-100 transform translate-x-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 transform translate-x-0"
+        x-transition:leave-end="opacity-0 transform -translate-x-full"
+        class="fixed top-0 left-0 h-full w-64 bg-deep-black border-r border-border-dark p-6 z-40"
+        style="display: none;"
+    >
+        <h2 class="font-mono text-xl text-primary-red uppercase tracking-wider mb-8">Navigation</h2>
+        <nav class="flex flex-col space-y-4">
+            <a href="{{ '/' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">home</span>Home</a>
+            <a href="{{ '/study-guide.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">description</span>Study Guide</a>
+            <a href="{{ '/flashcards.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">style</span>Flashcards</a>
+            <a href="{{ '/summaries.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">view_timeline</span>Summaries</a>
+            <a href="{{ '/vlogs.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">movie</span>Vlogs</a>
+            <a href="{{ '/resources.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">folder</span>Resources</a>
+            <a href="{{ '/about.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">badge</span>Ctrl + Alt + Who</a>
+        </nav>
+    </div>
 </header>
+
+<script>
+    function headerComponent() {
+        return {
+            isOpen: false,
+            currentTime: new Date().toLocaleTimeString('en-ZA', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }),
+            systemStatus: 'NOMINAL', // Can be 'NOMINAL', 'WARNING', 'ERROR'
+            
+            initClock() {
+                setInterval(() => {
+                    this.currentTime = new Date().toLocaleTimeString('en-ZA', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                }, 1000);
+            }
+        }
+    }
+</script>
