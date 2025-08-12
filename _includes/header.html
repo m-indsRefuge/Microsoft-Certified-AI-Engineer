@@ -6,6 +6,7 @@
     <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-center h-16">
             
+            
             <div class="flex flex-col items-center">
                 <div class="font-mono text-lg md:text-xl text-neon-green hologram-text">
                     {% if page.title and page.url != "/" %}
@@ -53,13 +54,14 @@
     >
         <h2 class="font-mono text-xl text-primary-red uppercase tracking-wider mb-8">Navigation</h2>
         <nav class="flex flex-col space-y-4">
-            <a href="{{ '/' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">home</span>Home</a>
-            <a href="{{ '/study-guide.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">description</span>Study Guide</a>
-            <a href="{{ '/flashcards.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">style</span>Flashcards</a>
-            <a href="{{ '/summaries.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">view_timeline</span>Summaries</a>
-            <a href="{{ '/vlogs.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">movie</span>Vlogs</a>
-            <a href="{{ '/resources.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">folder</span>Resources</a>
-            <a href="{{ '/about.html' | relative_url }}" class="mobile-nav-link"><span class="material-symbols-outlined">badge</span>Ctrl + Alt + Who</a>
+            <a href="{{ '/' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">home</span>Home</a>
+            <a href="{{ '/study-guide.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">description</span>Study Guide</a>
+            <a href="{{ '/flashcards.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">style</span>Flashcards</a>
+            <a href="{{ '/summaries.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">view_timeline</span>Summaries</a>
+            <a href="{{ '/vlogs.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">movie</span>Vlogs</a>
+            <a href="{{ '/resources.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">folder</span>Resources</a>
+            <a href="{{ '/about.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">badge</span>Ctrl + Alt + Who</a>
+            <a href="{{ '/gallery.html' | relative_url }}" class="mobile-nav-link !text-neon-green"><span class="material-symbols-outlined">palette</span>Pixels & Perception</a>
         </nav>
     </div>
 </header>
