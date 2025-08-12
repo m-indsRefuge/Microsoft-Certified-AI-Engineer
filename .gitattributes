@@ -1,0 +1,15 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Explicitly force LF for important cross-platform files
+.gitattributes text
+.gitignore text
+Gemfile text
+Gemfile.lock text
+
+# Tell git to not touch binary files
+*.png binary
+*.jpg binary
+*.pdf binary
+*.webm binary
+*.mp4 binary
