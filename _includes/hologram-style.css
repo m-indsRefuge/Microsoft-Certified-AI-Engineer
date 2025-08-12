@@ -1,0 +1,3 @@
+.card--hologram::after {
+  background-image: url('{{ "/assets/img/hologram-sprite.png" | relative_url }}');
+}

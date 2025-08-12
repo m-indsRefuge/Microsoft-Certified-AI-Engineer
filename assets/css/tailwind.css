@@ -623,6 +623,10 @@ body {
   position: sticky;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-16 {
   bottom: 4rem;
 }
@@ -659,12 +663,8 @@ body {
   top: 50%;
 }
 
-.isolate {
-  isolation: isolate;
-}
-
-.z-10 {
-  z-index: 10;
+.z-20 {
+  z-index: 20;
 }
 
 .z-40 {
@@ -673,6 +673,10 @@ body {
 
 .z-50 {
   z-index: 50;
+}
+
+.order-1 {
+  order: 1;
 }
 
 .mx-auto {
@@ -741,6 +745,10 @@ body {
   margin-top: 0.25rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
@@ -797,6 +805,10 @@ body {
   aspect-ratio: 4/3;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
@@ -809,12 +821,24 @@ body {
   height: 1rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[60vh\] {
   height: 60vh;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .h-full {
   height: 100%;
+}
+
+.min-h-\[100px\] {
+  min-height: 100px;
 }
 
 .min-h-\[200px\] {
@@ -829,16 +853,20 @@ body {
   width: 0.125rem;
 }
 
-.w-10\/12 {
-  width: 83.333333%;
-}
-
 .w-4 {
   width: 1rem;
 }
 
+.w-5\/12 {
+  width: 41.666667%;
+}
+
 .w-64 {
   width: 16rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-96 {
@@ -931,8 +959,38 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -955,12 +1013,20 @@ body {
   justify-content: space-between;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-8 {
@@ -973,16 +1039,16 @@ body {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-12 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
@@ -1102,8 +1168,17 @@ body {
   background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .\!p-2 {
   padding: 0.5rem !important;
+}
+
+.\!p-4 {
+  padding: 1rem !important;
 }
 
 .p-0\.5 {
@@ -1323,6 +1398,11 @@ body {
   color: rgb(136 136 136 / var(--tw-text-opacity, 1));
 }
 
+.text-neon-blue {
+  --tw-text-opacity: 1;
+  color: rgb(0 170 255 / var(--tw-text-opacity, 1));
+}
+
 .text-neon-green {
   --tw-text-opacity: 1;
   color: rgb(57 255 20 / var(--tw-text-opacity, 1));
@@ -1383,6 +1463,12 @@ body {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-secondary-cyan {
   --tw-shadow-color: #0099dd;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1407,6 +1493,10 @@ body {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
 }
 
 .duration-200 {
@@ -1532,9 +1622,9 @@ a.shimmer {
   90deg,
   #0099dd 25%,
   #fff0f6 50%,
-  #0099dd 75%
+  #0099dd 65%
   );
-  background-size: 200% auto;
+  background-size: 190% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 2s linear infinite;
@@ -1569,7 +1659,7 @@ a.shimmer {
   color: rgb(255 240 246 / var(--tw-text-opacity, 1));
   --tw-backdrop-blur: blur(4px);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+  box-shadow: 0 0 0px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
 }
 
 .hero-section h1 {
@@ -1729,17 +1819,20 @@ body::after {
   }
 }
 
-/* ====== Site-Wide Glitch Effect for Headings ====== */
+/* ====== Site-Wide Glitch Effect for Headings (H3 EXCLUDED) ====== */
 
-h1, h2, h3 {
+/* Base style for glitching headings */
+
+h1, h2 {
   position: relative;
   color: white;
-  text-shadow: 0 0 2px white, 0 0 5px white;
+  text-shadow: 0 0 2px white, 0 0 8px #ff1493, 0 0 12px #ff1493;
 }
 
+/* Base styles for all glitching pseudo-elements */
+
 h1::before, h1::after,
-h2::before, h2::after,
-h3::before, h3::after {
+h2::before, h2::after {
   content: attr(data-text);
   position: absolute;
   left: 0;
@@ -1749,110 +1842,132 @@ h3::before, h3::after {
   clip: rect(0, 900px, 0, 0);
 }
 
-h1::before, h2::before, h3::before {
-  left: 2px;
-  text-shadow: -2px 0 #39ff14;
-  animation: glitchTop 3s infinite linear alternate-reverse;
+/* --- H1 Effect (100% Intensity) --- */
+
+h1::before {
+  left: 5px;
+  text-shadow: -5px 0 #39ff14;
+  animation: glitchTop-h1 1.5s infinite linear alternate-reverse;
 }
 
-h1::after, h2::after, h3::after {
-  left: -2px;
-  text-shadow: -2px 0 #FF073A;
-  animation: glitchBottom 3s infinite linear alternate-reverse;
+h1::after {
+  left: -5px;
+  text-shadow: -5px 0 #D6003B;
+  animation: glitchBottom-h1 1.5s infinite linear alternate-reverse;
 }
 
-/* ====== Periodic Distortion Animations ====== */
+/* --- H2 Effect (~60% Intensity) --- */
 
-@keyframes glitchTop {
-  0% {
-    clip: rect(20px, 9999px, 25px, 0);
+h2::before {
+  left: 3px;
+  text-shadow: -3px 0 #39ff14;
+  animation: glitchTop-h2 2.5s infinite linear alternate-reverse;
+}
+
+h2::after {
+  left: -3px;
+  text-shadow: -3px 0 #D6003B;
+  animation: glitchBottom-h2 2.5s infinite linear alternate-reverse;
+}
+
+/* --- Custom H3 Heading Style --- */
+
+h3 {
+  color: #0099dd;
+  text-shadow: 0 0 8px #0099dd;
+}
+
+/* ====== Periodic Distortion Animations (H3 EXCLUDED) ====== */
+
+/* --- H1 Keyframes (100% Intensity) --- */
+
+@keyframes glitchTop-h1 {
+  2%, 64% {
+    transform: translate(2px, -2px);
+    clip: rect(25px, 9999px, 80px, 0);
   }
 
-  5% {
+  3%, 65% {
+    transform: translate(-2px, 2px);
     clip: rect(0, 9999px, 5px, 0);
   }
 
-  10% {
-    clip: rect(15px, 9999px, 20px, 0);
+  4%, 66% {
+    transform: translate(2px, 2px);
+    clip: rect(40px, 9999px, 99px, 0);
   }
 
-  15% {
-    clip: rect(5px, 9999px, 10px, 0);
+  5%, 67% {
+    transform: translate(-2px, -2px);
+    clip: rect(15px, 9999px, 70px, 0);
   }
 
-  20% {
-    clip: rect(25px, 9999px, 30px, 0);
-  }
-
-  100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-}
-
-@keyframes glitchBottom {
-  0% {
-    clip: rect(60px, 9999px, 65px, 0);
-  }
-
-  5% {
-    clip: rect(45px, 9999px, 50px, 0);
-  }
-
-  10% {
-    clip: rect(70px, 9999px, 75px, 0);
-  }
-
-  15% {
-    clip: rect(55px, 9999px, 60px, 0);
-  }
-
-  20% {
-    clip: rect(80px, 9999px, 85px, 0);
-  }
-
-  100% {
-    clip: rect(0, 9999px, 0, 0);
+  6%, 68% {
+    transform: translate(0, 0);
+    clip: rect(50px, 9999px, 60px, 0);
   }
 }
 
-/* ===================================================================== */
-
-/* NEURAL HUB VISUALIZATION STYLES                                       */
-
-/* ===================================================================== */
-
-#neural-hub-container {
-  cursor: pointer;
-}
-
-.neural-tooltip {
-  position: absolute;
-  text-align: center;
-  padding: 8px 12px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 14px;
-  background: rgba(240, 240, 240, 0.9);
-  color: #0a0a0a;
-  border-radius: 8px;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+@keyframes glitchBottom-h1 {
+  2%, 64% {
+    transform: translate(-2px, 2px);
+    clip: rect(40px, 9999px, 99px, 0);
   }
 
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  3%, 65% {
+    transform: translate(2px, -2px);
+    clip: rect(0, 9999px, 25px, 0);
   }
 
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  4%, 66% {
+    transform: translate(-2px, -2px);
+    clip: rect(20px, 9999px, 85px, 0);
+  }
+
+  5%, 67% {
+    transform: translate(2px, 2px);
+    clip: rect(55px, 9999px, 75px, 0);
+  }
+
+  6%, 68% {
+    transform: translate(0, 0);
+    clip: rect(10px, 9999px, 30px, 0);
+  }
+}
+
+/* --- H2 Keyframes (~60% Intensity) --- */
+
+@keyframes glitchTop-h2 {
+  2%, 64% {
+    transform: translate(1px, -1px);
+    clip: rect(15px, 9999px, 45px, 0);
+  }
+
+  4%, 66% {
+    transform: translate(-1px, 1px);
+    clip: rect(30px, 9999px, 70px, 0);
+  }
+
+  6%, 68% {
+    transform: translate(0, 0);
+    clip: rect(25px, 9999px, 35px, 0);
+  }
+}
+
+@keyframes glitchBottom-h2 {
+  2%, 64% {
+    transform: translate(-1px, 1px);
+    clip: rect(25px, 9999px, 80px, 0);
+  }
+
+  4%, 66% {
+    transform: translate(1px, -1px);
+    clip: rect(10px, 9999px, 35px, 0);
+  }
+
+  6%, 68% {
+    transform: translate(0, 0);
+    clip: rect(40px, 9999px, 50px, 0);
   }
 }
 
@@ -1910,6 +2025,136 @@ h1::after, h2::after, h3::after {
   }
 }
 
+/* --- Holographic Image Effect --- */
+
+.hologram-image {
+  position: absolute;
+  top: -2.5rem;
+  /* Pulls the image up */
+  right: -2rem;
+  /* Pushes the image right */
+  width: 100px;
+  /* Controls the size of the hologram */
+  height: auto;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+  /* Creates a light-based blending effect */
+  /* This filter chain converts the image to the cyan hologram color */
+  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
+  animation: hologramFlicker 5s infinite ease-in-out;
+}
+
+/* Scanline overlay for the hologram */
+
+.hologram-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0px,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 2px
+  );
+  z-index: 2;
+}
+
+@keyframes hologramFlicker {
+  0%   {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50%  {
+    opacity: 0.8;
+    transform: translateY(-3px);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+}
+
+/* --- Scrolling Hologram Effect --- */
+
+.card--hologram {
+  /* This class will be added to any card to activate the effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.card--hologram::after {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  /* Position the hologram */
+  right: -1rem;
+  /* IMPORTANT: These dimensions must match each frame of your sprite sheet */
+  width: 150px;
+  height: 150px;
+  /* The path to your new sprite sheet */
+  background-image: url('{{ "/assets/img/hologram-sprite.png" | relative_url }}');
+  /* This animation scrolls through the 6 frames */
+  animation: scrollHologram 12s steps(6) infinite;
+  /* Holographic visual filters */
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
+}
+
+@keyframes scrollHologram {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    /* This value is -1 * (height_of_frame * number_of_frames) */
+    /* e.g., -1 * (150px * 6) = -900px */
+    background-position: 0 -900px;
+  }
+}
+
+/* --- Hero Bleed Image Effect --- */
+
+.hero-bleed-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  /* Maintain aspect ratio */
+  max-width: 40%;
+  /* Prevent image from taking over the box */
+  /* Styling for the effect */
+  opacity: 0.3;
+  mix-blend-mode: screen;
+  /* Blends the light parts of the image */
+  /* This creates the soft fade on the right edge */
+  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+/* --- 3D Gallery Styles --- */
+
+#gallery-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#gallery-container:active {
+  cursor: grabbing;
+}
+
+.hover\:bg-primary-red:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 0 59 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-secondary-cyan:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
@@ -1963,13 +2208,45 @@ h1::after, h2::after, h3::after {
     right: 1.5rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:items-center {
+    align-items: center;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .sm\:justify-end {
+    justify-content: flex-end;
   }
 
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:pl-8 {
+    padding-left: 2rem;
+  }
+
+  .sm\:pr-8 {
+    padding-right: 2rem;
   }
 }
 
@@ -1997,6 +2274,15 @@ h1::after, h2::after, h3::after {
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-5xl {

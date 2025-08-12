@@ -8,32 +8,33 @@ title: Summaries
     <header class="text-center mb-16">
         <div class="transparent-container rounded-xl p-6 md:p-8 shadow-2xl">
             <h1 class="text-4xl md:text-5xl font-mono uppercase tracking-wider" data-text="Study Summaries">Study Summaries</h1>
-            <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto">
+            <p class="mt-4 text-lg font-sans text-holo-silver max-w-3xl mx-auto typewriter">
                 An interactive timeline of all notes, mind maps, and learning activities from the AI-102 journey.
             </p>
         </div>
     </header>
 
     <div class="relative">
-        <div class="absolute left-1/2 top-0 h-full w-0.5 bg-border-dark"></div>
+        <div class="absolute left-1/2 top-0 h-full w-0.5 bg-border-dark hidden sm:block"></div>
 
-        <div class="relative space-y-12">
+        <div class="relative">
             {% for summary in site.summaries %}
-                <div class="flex items-center w-full">
+                {% assign side = forloop.index | modulo: 2 %}
+                <div class="relative sm:flex sm:items-center {% if side == 0 %}sm:justify-start{% else %}sm:justify-end{% endif %} mb-12">
                     
-                    <div class="w-10/12 mx-auto relative z-10">
+                    <div class="w-full sm:w-1/2 {% if side == 0 %}sm:pr-8{% else %}sm:pl-8{% endif %}">
                         <div class="card p-6">
                             <div class="prose prose-invert max-w-none">
                                 <p class="!text-sm !text-secondary-cyan">{{ summary.date | date: "%B %d, %Y" }}</p>
-                                <h2 class="!text-2xl !font-bold !mt-1" data-text="{{ summary.title }}">{{ summary.title }}</h2>
+                                <h3 class="!text-2xl !font-bold !mt-1" data-text="{{ summary.title }}">{{ summary.title }}</h2>
                                 <p class="!text-sm">{{ summary.summary }}</p>
                                 
-                                <a href="{{ summary.url | relative_url }}" class="btn !no-underline !bg-primary-red !text-deep-black mt-4 !py-1 !px-2 !text-sm">Read More</a>
+                                <a href="{{ summary.url | relative_url }}" class="btn !no-underline !bg-primary-red !text-deep-black mt-4 !py-1 !px-2 !text-sm">View Post & PDF</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary-cyan rounded-full shadow-lg shadow-secondary-cyan"></div>
+                    <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary-cyan rounded-full shadow-lg shadow-secondary-cyan hidden sm:block"></div>
                 </div>
             {% endfor %}
         </div>
