@@ -175,8 +175,8 @@ body::after {
 /* Base style for glitching headings */
 h1, h2 {
   position: relative;
-  color: white;
-  text-shadow: 0 0 2px white, 0 0 8px #ff1493, 0 0 12px #ff1493;
+  color: deep-black;
+  text-shadow: 0 0 2px holo-silver, 0 0 8px #ff1493, 0 0 12px #ff1493;
 }
 
 /* Base styles for all glitching pseudo-elements */
@@ -194,12 +194,12 @@ h2::before, h2::after {
 /* --- H1 Effect (100% Intensity) --- */
 h1::before {
   left: 5px;
-  text-shadow: -5px 0 theme('colors.neon-green');
+  text-shadow: -5px 0 theme('colors.ultraviolet');
   animation: glitchTop-h1 1.5s infinite linear alternate-reverse;
 }
 h1::after {
   left: -5px;
-  text-shadow: -5px 0 theme('colors.primary-red');
+  text-shadow: -5px 0 theme('colors.deep-black');
   animation: glitchBottom-h1 1.5s infinite linear alternate-reverse;
 }
 
