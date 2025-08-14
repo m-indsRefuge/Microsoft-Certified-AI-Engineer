@@ -1146,11 +1146,11 @@ body {
 
 .bg-deep-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+  background-color: rgb(85 85 85 / var(--tw-bg-opacity, 1));
 }
 
 .bg-deep-black\/30 {
-  background-color: rgb(10 10 10 / 0.3);
+  background-color: rgb(85 85 85 / 0.3);
 }
 
 .bg-neon-green {
@@ -1365,7 +1365,7 @@ body {
 
 .\!text-deep-black {
   --tw-text-opacity: 1 !important;
-  color: rgb(10 10 10 / var(--tw-text-opacity, 1)) !important;
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1)) !important;
 }
 
 .\!text-neon-green {
@@ -1380,7 +1380,7 @@ body {
 
 .text-deep-black {
   --tw-text-opacity: 1;
-  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-300 {
@@ -1549,7 +1549,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   --tw-text-opacity: 1;
-  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1574,7 +1574,7 @@ h3 {
   --tw-bg-opacity: 1;
   background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
-  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
 }
 
 /* Cards with a Backlit Effect */
@@ -1825,8 +1825,8 @@ body::after {
 
 h1, h2 {
   position: relative;
-  color: white;
-  text-shadow: 0 0 2px white, 0 0 8px #ff1493, 0 0 12px #ff1493;
+  color: deep-black;
+  text-shadow: 0 0 2px holo-silver, 0 0 8px #ff1493, 0 0 12px #ff1493;
 }
 
 /* Base styles for all glitching pseudo-elements */
@@ -1846,13 +1846,13 @@ h2::before, h2::after {
 
 h1::before {
   left: 5px;
-  text-shadow: -5px 0 #39ff14;
+  text-shadow: -5px 0 #8f00ff;
   animation: glitchTop-h1 1.5s infinite linear alternate-reverse;
 }
 
 h1::after {
   left: -5px;
-  text-shadow: -5px 0 #D6003B;
+  text-shadow: -5px 0 #555555;
   animation: glitchBottom-h1 1.5s infinite linear alternate-reverse;
 }
 
@@ -2162,7 +2162,7 @@ h3 {
 
 .hover\:text-deep-black:hover {
   --tw-text-opacity: 1;
-  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-secondary-cyan:hover {

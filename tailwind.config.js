@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         'primary-red': '#D6003B',
         'secondary-cyan': '#0099dd',
-        'deep-black': '#0a0a0a',
+        'deep-black': '#555555',
         'text-light': '#fff0f6',
         'muted-gray': '#888888',
         'card-bg': 'rgba(15, 15, 20, 0.70)',

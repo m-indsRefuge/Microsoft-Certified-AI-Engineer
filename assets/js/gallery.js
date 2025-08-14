@@ -1,7 +1,7 @@
 /**
  * gallery.js
  * Renders a 3D holographic image carousel using Three.js.
- * Includes focus-view functionality on click.
+ * Includes focus-view functionality on click and lazy loading for performance.
  */
 document.addEventListener('DOMContentLoaded', () => {
     // --- Prerequisite Checks ---
@@ -25,17 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('gallery-container');
     if (!container) return;
 
+    // --- NEW: Constant for initial image load count ---
+    const INITIAL_LOAD_COUNT = 15;
+
     // --- Core Three.js Components ---
     let scene, camera, renderer;
     const carouselGroup = new THREE.Group();
     let targetRotation = 0;
     let currentRotation = 0;
 
+    // --- MODIFIED: Moved these variables to a higher scope for reuse ---
+    let textureLoader, radius, angleStep;
+
     // --- Interaction Variables ---
     let isDragging = false;
     let previousMouseX = 0;
 
-    // --- NEW: Focus-View Variables ---
+    // --- Focus-View Variables ---
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     let focusedObject = null;
@@ -52,49 +58,77 @@ document.addEventListener('DOMContentLoaded', () => {
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
-        const textureLoader = new THREE.TextureLoader();
-        const radius = 4;
-        const angleStep = (Math.PI * 2) / galleryData.length;
+        // MODIFIED: Initialize the shared variables
+        textureLoader = new THREE.TextureLoader();
+        radius = 4;
+        angleStep = (Math.PI * 2) / galleryData.length;
 
-        galleryData.forEach((item, index) => {
-            const texture = textureLoader.load(siteBaseUrl + item.image);
-            const material = new THREE.MeshBasicMaterial({
-                map: texture,
-                transparent: true,
-                opacity: 0.8,
-                side: THREE.DoubleSide,
-                blending: THREE.AdditiveBlending
-            });
-            const geometry = new THREE.PlaneGeometry(2, 2);
-            const plane = new THREE.Mesh(geometry, material);
-            const angle = index * angleStep;
-            plane.position.x = radius * Math.sin(angle);
-            plane.position.z = radius * Math.cos(angle);
-            plane.lookAt(new THREE.Vector3(0, 0, 0));
-            
-            // NEW: Store original state for un-focusing
-            originalPositions.set(plane, plane.position.clone());
-            originalOpacities.set(plane, material.opacity);
-
-            carouselGroup.add(plane);
+        // --- MODIFIED: This loop now only loads the initial batch ---
+        galleryData.slice(0, INITIAL_LOAD_COUNT).forEach((item, index) => {
+            createImagePlane(item, index);
         });
 
         scene.add(carouselGroup);
+        
+        // --- NEW: Trigger the lazy loading process after a delay ---
+        setTimeout(lazyLoadTheRest, 1500); // 1.5 second delay
 
-        // MODIFIED: Added click listener
         window.addEventListener('resize', onWindowResize, false);
         container.addEventListener('mousedown', onMouseDown, false);
         container.addEventListener('mousemove', onMouseMove, false);
         container.addEventListener('mouseup', onMouseUp, false);
         container.addEventListener('mouseleave', onMouseUp, false);
-        container.addEventListener('click', onClick, false); // NEW
+        container.addEventListener('click', onClick, false);
 
         animate();
     }
+    
+    // --- NEW: This function creates a single image plane (to avoid repeating code) ---
+    function createImagePlane(item, index) {
+        const texture = textureLoader.load(siteBaseUrl + item.image);
+        const material = new THREE.MeshBasicMaterial({
+            map: texture,
+            transparent: true,
+            opacity: 0.8,
+            side: THREE.DoubleSide,
+            blending: THREE.AdditiveBlending
+        });
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        const plane = new THREE.Mesh(geometry, material);
+        const angle = index * angleStep;
+        plane.position.x = radius * Math.sin(angle);
+        plane.position.z = radius * Math.cos(angle);
+        plane.lookAt(new THREE.Vector3(0, 0, 0));
+        
+        originalPositions.set(plane, plane.position.clone());
+        originalOpacities.set(plane, material.opacity);
 
-    // --- NEW: Click handling and Focus/Unfocus Logic ---
+        carouselGroup.add(plane);
+    }
+    
+    // --- NEW: This function will progressively load all remaining images ---
+    function lazyLoadTheRest() {
+        let currentIndex = INITIAL_LOAD_COUNT;
+
+        function loadOneByOne() {
+            if (currentIndex >= galleryData.length) {
+                console.log("All gallery images have been lazy-loaded.");
+                return; // Stop when all images are loaded
+            }
+
+            createImagePlane(galleryData[currentIndex], currentIndex);
+            currentIndex++;
+            
+            // Schedule the next image to be loaded after a short delay
+            setTimeout(loadOneByOne, 150);
+        }
+        
+        loadOneByOne();
+    }
+
+    // --- Click handling and Focus/Unfocus Logic (Unchanged) ---
     function onClick(event) {
-        if (isDragging) return; // Don't trigger click if user was dragging
+        if (isDragging) return; 
 
         if (focusedObject) {
             unfocusObject();
@@ -116,14 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         focusedObject = objectToFocus;
         container.style.cursor = 'zoom-out';
 
-        // Animate other objects
         carouselGroup.children.forEach(child => {
             if (child !== focusedObject) {
                 gsap.to(child.material, { opacity: 0.1, duration: 0.5 });
             }
         });
 
-        // Animate focused object to the center
         gsap.to(focusedObject.position, {
             x: 0,
             y: 0,
@@ -146,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const originalPos = originalPositions.get(focusedObject);
 
-        // Animate focused object back to its original position
         gsap.to(focusedObject.position, {
             x: originalPos.x,
             y: originalPos.y,
@@ -162,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: 'power3.inOut'
         });
 
-        // Animate other objects back
         carouselGroup.children.forEach(child => {
             if (child !== focusedObject) {
                 const originalOpacity = originalOpacities.get(child);
@@ -178,12 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     }
-
-    // --- MODIFIED: Event handlers to respect focus state ---
+    
     function onMouseDown(event) {
         if (focusedObject) return;
-        isDragging = false; // Reset drag state initially
-        setTimeout(() => isDragging = true, 150); // Set dragging true only after a short delay
+        isDragging = false; 
+        setTimeout(() => isDragging = true, 150);
         previousMouseX = event.clientX;
     }
 
@@ -198,13 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isDragging = false;
     }
     
-    // --- MODIFIED: Animation loop to respect focus state ---
     function animate() {
         requestAnimationFrame(animate);
 
-        // Only rotate if not in focus mode and not being dragged
         if (!focusedObject && !isDragging) {
-            targetRotation += 0.0005; // Slightly slower auto-rotation
+            targetRotation += 0.0005;
         }
         
         if (!focusedObject) {
