@@ -1,3 +1,4 @@
+# Edit to force push
 # AI-102 Study Journey
 
 This repository documents my personal study journey for the Microsoft AI-102: Designing and Implementing a Microsoft Azure AI Solution certification.
