@@ -5,22 +5,38 @@
 /* Custom CSS from style.scss */
 
 @layer base {
-  /* Global Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-mono font-bold uppercase tracking-widest text-primary-red;
-  }
-  body {
-    @apply font-sans;
-    position: relative;
-    background-color: #000; /* fallback for dark mode */
-    color: #fff;
-  }
+ /* Clean, Geometric Headings with a Glow Effect */
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  text-shadow: 0 0 5px theme('colors.secondary-cyan'), 0 0 10px rgba(0, 153, 221, 0.4);
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
-/* Specific heading sizes, if not covered by Tailwind */
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
+h1::after,
+h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: theme('colors.secondary-cyan');
+  box-shadow: 0 0 5px theme('colors.secondary-cyan');
+  margin-top: 0.5rem;
+  transition: width 0.3s ease-in-out;
+}
+
+h1:hover::after,
+h2:hover::after {
+  width: 120%;
+  box-shadow: 0 0 10px theme('colors.secondary-cyan'), 0 0 20px rgba(0, 153, 221, 0.6);
+}
+
+/* Custom H3 Heading Style */
+h3 {
+  color: theme('colors.secondary-cyan');
+  text-shadow: 0 0 8px theme('colors.secondary-cyan');
+}
 
 /* Buttons */
 .btn {
@@ -30,14 +46,19 @@ h3 { font-size: 1.75rem; }
   @apply bg-secondary-cyan text-deep-black animate-rippleGlow;
 }
 
-/* Cards with a Backlit Effect */
+/* Cards with a Dimensional Effect */
 .card {
-  @apply bg-card-bg border border-border-dark rounded-lg p-6 transition-all duration-300 ease-in-out backdrop-blur-sm shadow-lg;
-  box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+  @apply bg-card-bg border border-border-light rounded-lg p-6 transition-all duration-300 ease-in-out backdrop-blur-sm;
+  box-shadow: 0 4px 6px var(--tw-shadow-color), 0 1px 3px var(--tw-shadow-color);
+  --tw-shadow-color: theme('colors.shadow-dark');
+  transform: translateY(0);
 }
+
 .card:hover {
-  @apply transform scale-105 border-secondary-cyan;
-  box-shadow: 0 0 20px theme('colors.secondary-cyan');
+  @apply transform scale-100 border-primary-blue;
+  box-shadow: 0 10px 15px var(--tw-shadow-color), 0 4px 6px var(--tw-shadow-color);
+  --tw-shadow-color: theme('colors.shadow-dark');
+  transform: translateY(-5px);
 }
 
 /* Links */
@@ -84,6 +105,7 @@ a.shimmer {
 /* --- Video Background --- */
 #myVideo {
   @apply fixed right-0 bottom-0 min-w-full min-h-full -z-20 object-cover;
+  filter: brightness(89%)contrast(120%);
 }
 body::before {
   content: '';
@@ -137,119 +159,6 @@ body::before {
   @apply text-secondary-cyan font-bold inline-block w-4 -ml-4;
 }
 
-/* ===================================================================== */
-/* ADVANCED CRT & GLITCH EFFECT (CSS ONLY)                               */
-/* ===================================================================== */
-
-/* ====== CRT Scanline Overlay ====== */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 2px
-  );
-  z-index: 9999;
-  mix-blend-mode: overlay;
-  animation: flicker 0.15s infinite;
-}
-
-/* Flicker animation for CRT glow */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.8;
-  }
-}
-
-/* ====== Site-Wide Glitch Effect for Headings (H3 EXCLUDED) ====== */
-/* Base style for glitching headings */
-h1, h2 {
-  position: relative;
-  color: deep-black;
-  text-shadow: 0 0 2px holo-silver, 0 0 8px #ff1493, 0 0 12px #ff1493;
-}
-
-/* Base styles for all glitching pseudo-elements */
-h1::before, h1::after,
-h2::before, h2::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-}
-
-/* --- H1 Effect (100% Intensity) --- */
-h1::before {
-  left: 5px;
-  text-shadow: -5px 0 theme('colors.ultraviolet');
-  animation: glitchTop-h1 1.5s infinite linear alternate-reverse;
-}
-h1::after {
-  left: -5px;
-  text-shadow: -5px 0 theme('colors.deep-black');
-  animation: glitchBottom-h1 1.5s infinite linear alternate-reverse;
-}
-
-/* --- H2 Effect (~60% Intensity) --- */
-h2::before {
-  left: 3px;
-  text-shadow: -3px 0 theme('colors.neon-green');
-  animation: glitchTop-h2 2.5s infinite linear alternate-reverse;
-}
-h2::after {
-  left: -3px;
-  text-shadow: -3px 0 theme('colors.primary-red');
-  animation: glitchBottom-h2 2.5s infinite linear alternate-reverse;
-}
-
-/* --- Custom H3 Heading Style --- */
-h3 {
-  color: theme('colors.secondary-cyan');
-  text-shadow: 0 0 8px theme('colors.secondary-cyan');
-}
-
-/* ====== Periodic Distortion Animations (H3 EXCLUDED) ====== */
-
-/* --- H1 Keyframes (100% Intensity) --- */
-@keyframes glitchTop-h1 {
-  2%, 64% { transform: translate(2px, -2px); clip: rect(25px, 9999px, 80px, 0); }
-  3%, 65% { transform: translate(-2px, 2px); clip: rect(0, 9999px, 5px, 0); }
-  4%, 66% { transform: translate(2px, 2px); clip: rect(40px, 9999px, 99px, 0); }
-  5%, 67% { transform: translate(-2px, -2px); clip: rect(15px, 9999px, 70px, 0); }
-  6%, 68% { transform: translate(0, 0); clip: rect(50px, 9999px, 60px, 0); }
-}
-@keyframes glitchBottom-h1 {
-  2%, 64% { transform: translate(-2px, 2px); clip: rect(40px, 9999px, 99px, 0); }
-  3%, 65% { transform: translate(2px, -2px); clip: rect(0, 9999px, 25px, 0); }
-  4%, 66% { transform: translate(-2px, -2px); clip: rect(20px, 9999px, 85px, 0); }
-  5%, 67% { transform: translate(2px, 2px); clip: rect(55px, 9999px, 75px, 0); }
-  6%, 68% { transform: translate(0, 0); clip: rect(10px, 9999px, 30px, 0); }
-}
-
-/* --- H2 Keyframes (~60% Intensity) --- */
-@keyframes glitchTop-h2 {
-  2%, 64% { transform: translate(1px, -1px); clip: rect(15px, 9999px, 45px, 0); }
-  4%, 66% { transform: translate(-1px, 1px); clip: rect(30px, 9999px, 70px, 0); }
-  6%, 68% { transform: translate(0, 0); clip: rect(25px, 9999px, 35px, 0); }
-}
-@keyframes glitchBottom-h2 {
-  2%, 64% { transform: translate(-1px, 1px); clip: rect(25px, 9999px, 80px, 0); }
-  4%, 66% { transform: translate(1px, -1px); clip: rect(10px, 9999px, 35px, 0); }
-  6%, 68% { transform: translate(0, 0); clip: rect(40px, 9999px, 50px, 0); }
-}
 /* ===================================================================== */
 /* DEFINITIVE BLUEPRINT LAYOUT FIX (Desktop Only)                        */
 /* ===================================================================== */
@@ -349,9 +258,6 @@ h3 {
   /* IMPORTANT: These dimensions must match each frame of your sprite sheet */
   width: 150px; 
   height: 150px;
-
-  /* The path to your new sprite sheet */
-  background-image: url('{{ "/assets/img/hologram-sprite.png" | relative_url }}');
   
   /* This animation scrolls through the 6 frames */
   animation: scrollHologram 12s steps(6) infinite;
@@ -399,4 +305,5 @@ h3 {
 
 #gallery-container:active {
     cursor: grabbing;
+}
 }

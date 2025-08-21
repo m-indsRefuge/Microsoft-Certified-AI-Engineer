@@ -5,6 +5,7 @@ module.exports = {
     './_layouts/**/*.{html,js}',
     './_posts/**/*.{html,js}',
     './*.{html,js}',
+    './assets/css/input.css',
   ],
   theme: {
     extend: {
@@ -17,8 +18,8 @@ module.exports = {
         'card-bg': 'rgba(15, 15, 20, 0.70)',
         'border-dark': 'rgba(60, 31, 46, 0.7)',
         'neon-pink': '#FF1ACC',
-        'neon-green': '#39ff14', // Existing neon green
-        'neon-red': '#FF073A',   // NEW - Intense neon red for glitch
+        'neon-green': '#39ff14',
+        'neon-red': '#FF073A',
         'acid-yellow': '#eaff00',
         'ultraviolet': '#8f00ff',
         'glitch-orange': '#ff6600',
@@ -31,10 +32,22 @@ module.exports = {
         'console-green': '#00ff00',
         'scanner-orange': '#ff3300',
         'biohazard-yellow': '#ffff33',
+        'primary-blue': '#a5c9ca',
+        'secondary-pink': '#e5e0ff',
+        'soft-black': '#333333',
+        'border-light': 'rgba(165, 201, 202, 0.6)',
+        'accent-mint': '#a2dedc',
+        'soft-yellow': '#f7f6f2',
+        'lavender': '#957DAD',
+        'pale-red': '#E8A398',
+        'ocean-blue': '#8BC4BF',
+        'sundial': '#F1E1A6',
+        'shadow-dark': 'rgba(51, 51, 51, 0.2)',
+        'shadow-light': 'rgba(255, 255, 255, 0.1)',
       },
       fontFamily: {
-        'sans': ['Quantico', 'monospace'],
-        'mono': ['Jetbrains Mono', 'sans-serif'],
+        'sans': ['Rajdhani', 'sans-serif'],
+        'mono': ['Roboto Mono', 'monospace'],
       },
       boxShadow: {
         'neon-cyan': '0 0 3px var(--tw-shadow-color)',
@@ -93,4 +106,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

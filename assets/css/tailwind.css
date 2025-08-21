@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Quantico, monospace;
+  font-family: Rajdhani, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -243,7 +243,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: Jetbrains Mono, sans-serif;
+  font-family: Roboto Mono, monospace;
   /* 1 */
   font-feature-settings: normal;
   /* 2 */
@@ -554,23 +554,464 @@ video {
   display: none;
 }
 
-/* Global Typography */
+/* Clean, Geometric Headings with a Glow Effect */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Jetbrains Mono, sans-serif;
-  font-weight: 700;
+  position: relative;
+  text-shadow: 0 0 5px #0099dd, 0 0 10px rgba(0, 153, 221, 0.4);
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+h1::after,
+h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #0099dd;
+  box-shadow: 0 0 5px #0099dd;
+  margin-top: 0.5rem;
+  transition: width 0.3s ease-in-out;
+}
+
+h1:hover::after,
+h2:hover::after {
+  width: 120%;
+  box-shadow: 0 0 10px #0099dd, 0 0 20px rgba(0, 153, 221, 0.6);
+}
+
+/* Custom H3 Heading Style */
+
+h3 {
+  color: #0099dd;
+  text-shadow: 0 0 8px #0099dd;
+}
+
+/* Buttons */
+
+.btn {
+  border-radius: 0.5rem;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 0 59 / var(--tw-bg-opacity, 1));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   --tw-text-opacity: 1;
-  color: rgb(214 0 59 / var(--tw-text-opacity, 1));
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
-  font-family: Quantico, monospace;
+@keyframes rippleGlow {
+  0% {
+    box-shadow: 0 0 5px #00ffff;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #00ffff;
+  }
+
+  80% {
+    box-shadow: 0 0 5px #00ffff;
+  }
+}
+
+.btn:hover {
+  animation: rippleGlow 0.8s infinite;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
+}
+
+/* Cards with a Dimensional Effect */
+
+.card {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgba(165, 201, 202, 0.6);
+  background-color: rgba(15, 15, 20, 0.70);
+  padding: 1.5rem;
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px var(--tw-shadow-color), 0 1px 3px var(--tw-shadow-color);
+  --tw-shadow-color: rgba(51, 51, 51, 0.2);
+  transform: translateY(0);
+}
+
+.card:hover {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-border-opacity: 1;
+  border-color: rgb(165 201 202 / var(--tw-border-opacity, 1));
+  box-shadow: 0 10px 15px var(--tw-shadow-color), 0 4px 6px var(--tw-shadow-color);
+  --tw-shadow-color: rgba(51, 51, 51, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Links */
+
+a {
+  --tw-text-opacity: 1;
+  color: rgb(0 153 221 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+a.shimmer {
+  background: linear-gradient(
+  90deg,
+  #0099dd 25%,
+  #fff0f6 50%,
+  #0099dd 65%
+  );
+  background-size: 190% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+/* --- Typewriter Effect --- */
+
+.typewriter.typing {
+  border-right: 2px solid #0099dd;
+}
+
+.typewriter.finished-typing {
+  border-right: 2px solid #0099dd;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* --- Hero Section --- */
+
+.hero-section {
   position: relative;
-  background-color: #000;
-  /* fallback for dark mode */
-  color: #fff;
+  z-index: 0;
+  overflow: hidden;
+  border-bottom-width: 1px;
+  border-color: rgba(60, 31, 46, 0.7);
+  background-color: rgba(15, 15, 20, 0.70);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 240 246 / var(--tw-text-opacity, 1));
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  box-shadow: 0 0 0px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.hero-section p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  max-width: 36rem;
+  --tw-text-opacity: 1;
+  color: rgb(136 136 136 / var(--tw-text-opacity, 1));
+}
+
+/* --- Video Background --- */
+
+#myVideo {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: -20;
+  min-height: 100%;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(89%)contrast(120%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -10;
+  background-color: rgb(0 0 0 / 0.6);
+}
+
+/* --- Scroll Reveal --- */
+
+.reveal {
+  --tw-translate-y: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 1;
+}
+
+/* ===================================================================== */
+
+/* CUSTOM COMPONENT STYLES                                               */
+
+/* ===================================================================== */
+
+/* --- Transparent Container --- */
+
+.transparent-container {
+  border-radius: 0.5rem;
+  background-color: rgba(15, 15, 20, 0.70);
+  padding: 1.5rem;
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+/* --- Self-Scrolling Timeline --- */
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.scroller-container {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller-inner {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 2rem;
+  animation: infinite-scroll 60s linear infinite;
+}
+
+.scroller-container:hover .scroller-inner {
+  animation-play-state: paused;
+}
+
+/* --- Custom List Item Marker --- */
+
+.list-style-gt {
+  list-style-type: none;
+}
+
+.list-style-gt li::before {
+  content: '>';
+  margin-left: -1rem;
+  display: inline-block;
+  width: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(0 153 221 / var(--tw-text-opacity, 1));
+}
+
+/* ===================================================================== */
+
+/* DEFINITIVE BLUEPRINT LAYOUT FIX (Desktop Only)                        */
+
+/* ===================================================================== */
+
+.blueprint-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Two equal-width columns */
+  gap: 2rem;
+  /* Space between columns */
+  align-items: center;
+  /* Vertically align content */
+}
+
+.blueprint-hub-visual {
+  height: 24rem;
+  /* 384px */
+}
+
+/* --- Hologram Text Effect --- */
+
+.hologram-text {
+  animation: hologramFlicker 4s ease-in-out infinite;
+}
+
+@keyframes hologramFlicker {
+  0% {
+    opacity: 0.8;
+    text-shadow: 0 0 6px #39ff14;
+  }
+
+  30% {
+    opacity: 0.9;
+    text-shadow: 0 0 8px #39ff14;
+  }
+
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px #39ff14;
+  }
+
+  70% {
+    opacity: 1;
+    text-shadow: 0 0 8px #39ff14;
+  }
+
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 6px #39ff14;
+  }
+}
+
+/* --- Holographic Image Effect --- */
+
+.hologram-image {
+  position: absolute;
+  top: -2.5rem;
+  /* Pulls the image up */
+  right: -2rem;
+  /* Pushes the image right */
+  width: 100px;
+  /* Controls the size of the hologram */
+  height: auto;
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+  /* Creates a light-based blending effect */
+  /* This filter chain converts the image to the cyan hologram color */
+  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
+  animation: hologramFlicker 5s infinite ease-in-out;
+}
+
+/* Scanline overlay for the hologram */
+
+.hologram-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0px,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 2px
+  );
+  z-index: 2;
+}
+
+@keyframes hologramFlicker {
+  0%   {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50%  {
+    opacity: 0.8;
+    transform: translateY(-3px);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+}
+
+/* --- Scrolling Hologram Effect --- */
+
+.card--hologram {
+  /* This class will be added to any card to activate the effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.card--hologram::after {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  /* Position the hologram */
+  right: -1rem;
+  /* IMPORTANT: These dimensions must match each frame of your sprite sheet */
+  width: 150px;
+  height: 150px;
+  /* This animation scrolls through the 6 frames */
+  animation: scrollHologram 12s steps(6) infinite;
+  /* Holographic visual filters */
+  opacity: 0.7;
+  mix-blend-mode: color-dodge;
+  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
+}
+
+@keyframes scrollHologram {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    /* This value is -1 * (height_of_frame * number_of_frames) */
+    /* e.g., -1 * (150px * 6) = -900px */
+    background-position: 0 -900px;
+  }
+}
+
+/* --- Hero Bleed Image Effect --- */
+
+.hero-bleed-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  /* Maintain aspect ratio */
+  max-width: 40%;
+  /* Prevent image from taking over the box */
+  /* Styling for the effect */
+  opacity: 0.3;
+  mix-blend-mode: screen;
+  /* Blends the light parts of the image */
+  /* This creates the soft fade on the right edge */
+  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+/* --- 3D Gallery Styles --- */
+
+#gallery-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#gallery-container:active {
+  cursor: grabbing;
 }
 
 .container {
@@ -607,6 +1048,10 @@ body {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -625,6 +1070,10 @@ body {
 
 .inset-0 {
   inset: 0px;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .bottom-16 {
@@ -661,6 +1110,14 @@ body {
 
 .top-1\/2 {
   top: 50%;
+}
+
+.-z-20 {
+  z-index: -20;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .z-20 {
@@ -845,6 +1302,10 @@ body {
   min-height: 200px;
 }
 
+.min-h-full {
+  min-height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -881,6 +1342,10 @@ body {
   width: 100%;
 }
 
+.min-w-full {
+  min-width: 100%;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -911,6 +1376,10 @@ body {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-shrink-0 {
@@ -952,6 +1421,17 @@ body {
 
 .translate-x-0 {
   --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-5 {
+  --tw-translate-y: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-100 {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1057,6 +1537,10 @@ body {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-x-auto {
   overflow-x: auto;
 }
@@ -1109,8 +1593,16 @@ body {
   border-style: dashed;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-border-dark {
   border-color: rgba(60, 31, 46, 0.7);
+}
+
+.border-border-light {
+  border-color: rgba(165, 201, 202, 0.6);
 }
 
 .border-secondary-cyan {
@@ -1130,6 +1622,10 @@ body {
 .\!bg-secondary-cyan {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1)) !important;
+}
+
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
 }
 
 .bg-border-dark {
@@ -1166,6 +1662,10 @@ body {
 .bg-secondary-cyan {
   --tw-bg-opacity: 1;
   background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
+}
+
+.bg-repeat {
+  background-repeat: repeat;
 }
 
 .object-cover {
@@ -1225,6 +1725,16 @@ body {
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1233,6 +1743,11 @@ body {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-4 {
@@ -1278,11 +1793,11 @@ body {
 }
 
 .font-mono {
-  font-family: Jetbrains Mono, sans-serif;
+  font-family: Roboto Mono, monospace;
 }
 
 .font-sans {
-  font-family: Quantico, monospace;
+  font-family: Rajdhani, sans-serif;
 }
 
 .\!text-2xl {
@@ -1363,6 +1878,10 @@ body {
   letter-spacing: 0.05em;
 }
 
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
 .\!text-deep-black {
   --tw-text-opacity: 1 !important;
   color: rgb(85 85 85 / var(--tw-text-opacity, 1)) !important;
@@ -1423,6 +1942,20 @@ body {
   color: rgb(255 240 246 / var(--tw-text-opacity, 1));
 }
 
+.\!text-primary-blue {
+  --tw-text-opacity: 1 !important;
+  color: rgb(165 201 202 / var(--tw-text-opacity, 1)) !important;
+}
+
+.text-primary-blue {
+  --tw-text-opacity: 1;
+  color: rgb(165 201 202 / var(--tw-text-opacity, 1));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
 .\!no-underline {
   text-decoration-line: none !important;
 }
@@ -1443,6 +1976,10 @@ body {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
 }
 
 .shadow-2xl {
@@ -1474,6 +2011,21 @@ body {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.sepia {
+  --tw-sepia: sepia(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1485,6 +2037,12 @@ body {
 
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1507,6 +2065,10 @@ body {
   transition-duration: 300ms;
 }
 
+.duration-600 {
+  transition-duration: 600ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -1520,635 +2082,6 @@ body {
 }
 
 /* Custom CSS from style.scss */
-
-/* Specific heading sizes, if not covered by Tailwind */
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-/* Buttons */
-
-.btn {
-  border-radius: 0.5rem;
-  border-style: none;
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 0 59 / var(--tw-bg-opacity, 1));
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  --tw-text-opacity: 1;
-  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes rippleGlow {
-  0% {
-    box-shadow: 0 0 5px #00ffff;
-  }
-
-  50% {
-    box-shadow: 0 0 20px #00ffff;
-  }
-
-  80% {
-    box-shadow: 0 0 5px #00ffff;
-  }
-}
-
-.btn:hover {
-  animation: rippleGlow 0.8s infinite;
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 153 221 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(85 85 85 / var(--tw-text-opacity, 1));
-}
-
-/* Cards with a Backlit Effect */
-
-.card {
-  border-radius: 0.5rem;
-  border-width: 1px;
-  border-color: rgba(60, 31, 46, 0.7);
-  background-color: rgba(15, 15, 20, 0.70);
-  padding: 1.5rem;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  --tw-backdrop-blur: blur(4px);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
-}
-
-.card:hover {
-  --tw-scale-x: 1.05;
-  --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-border-opacity: 1;
-  border-color: rgb(0 153 221 / var(--tw-border-opacity, 1));
-  box-shadow: 0 0 20px #0099dd;
-}
-
-/* Links */
-
-a {
-  --tw-text-opacity: 1;
-  color: rgb(0 153 221 / var(--tw-text-opacity, 1));
-  text-decoration-line: none;
-}
-
-a:hover {
-  text-decoration-line: underline;
-}
-
-a.shimmer {
-  background: linear-gradient(
-  90deg,
-  #0099dd 25%,
-  #fff0f6 50%,
-  #0099dd 65%
-  );
-  background-size: 190% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 2s linear infinite;
-}
-
-/* --- Typewriter Effect --- */
-
-.typewriter.typing {
-  border-right: 2px solid #0099dd;
-}
-
-.typewriter.finished-typing {
-  border-right: 2px solid #0099dd;
-  animation: blink 0.75s step-end infinite;
-}
-
-/* --- Hero Section --- */
-
-.hero-section {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-  border-bottom-width: 1px;
-  border-color: rgba(60, 31, 46, 0.7);
-  background-color: rgba(15, 15, 20, 0.70);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  text-align: center;
-  --tw-text-opacity: 1;
-  color: rgb(255 240 246 / var(--tw-text-opacity, 1));
-  --tw-backdrop-blur: blur(4px);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  box-shadow: 0 0 0px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.hero-section p {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-  max-width: 36rem;
-  --tw-text-opacity: 1;
-  color: rgb(136 136 136 / var(--tw-text-opacity, 1));
-}
-
-/* --- Video Background --- */
-
-#myVideo {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  z-index: -20;
-  min-height: 100%;
-  min-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: -10;
-  background-color: rgb(0 0 0 / 0.6);
-}
-
-/* --- Scroll Reveal --- */
-
-.reveal {
-  --tw-translate-y: 1.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal.visible {
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  opacity: 1;
-}
-
-/* ===================================================================== */
-
-/* CUSTOM COMPONENT STYLES                                               */
-
-/* ===================================================================== */
-
-/* --- Transparent Container --- */
-
-.transparent-container {
-  border-radius: 0.5rem;
-  background-color: rgba(15, 15, 20, 0.70);
-  padding: 1.5rem;
-  --tw-backdrop-blur: blur(4px);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-/* --- Self-Scrolling Timeline --- */
-
-@keyframes infinite-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.scroller-container {
-  width: 100%;
-  overflow: hidden;
-  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-}
-
-.scroller-inner {
-  display: flex;
-  width: -moz-max-content;
-  width: max-content;
-  gap: 2rem;
-  animation: infinite-scroll 60s linear infinite;
-}
-
-.scroller-container:hover .scroller-inner {
-  animation-play-state: paused;
-}
-
-/* --- Custom List Item Marker --- */
-
-.list-style-gt {
-  list-style-type: none;
-}
-
-.list-style-gt li::before {
-  content: '>';
-  margin-left: -1rem;
-  display: inline-block;
-  width: 1rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(0 153 221 / var(--tw-text-opacity, 1));
-}
-
-/* ===================================================================== */
-
-/* ADVANCED CRT & GLITCH EFFECT (CSS ONLY)                               */
-
-/* ===================================================================== */
-
-/* ====== CRT Scanline Overlay ====== */
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 2px
-  );
-  z-index: 9999;
-  mix-blend-mode: overlay;
-  animation: flicker 0.15s infinite;
-}
-
-/* Flicker animation for CRT glow */
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-
-  20%, 24%, 55% {
-    opacity: 0.8;
-  }
-}
-
-/* ====== Site-Wide Glitch Effect for Headings (H3 EXCLUDED) ====== */
-
-/* Base style for glitching headings */
-
-h1, h2 {
-  position: relative;
-  color: deep-black;
-  text-shadow: 0 0 2px holo-silver, 0 0 8px #ff1493, 0 0 12px #ff1493;
-}
-
-/* Base styles for all glitching pseudo-elements */
-
-h1::before, h1::after,
-h2::before, h2::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-}
-
-/* --- H1 Effect (100% Intensity) --- */
-
-h1::before {
-  left: 5px;
-  text-shadow: -5px 0 #8f00ff;
-  animation: glitchTop-h1 1.5s infinite linear alternate-reverse;
-}
-
-h1::after {
-  left: -5px;
-  text-shadow: -5px 0 #555555;
-  animation: glitchBottom-h1 1.5s infinite linear alternate-reverse;
-}
-
-/* --- H2 Effect (~60% Intensity) --- */
-
-h2::before {
-  left: 3px;
-  text-shadow: -3px 0 #39ff14;
-  animation: glitchTop-h2 2.5s infinite linear alternate-reverse;
-}
-
-h2::after {
-  left: -3px;
-  text-shadow: -3px 0 #D6003B;
-  animation: glitchBottom-h2 2.5s infinite linear alternate-reverse;
-}
-
-/* --- Custom H3 Heading Style --- */
-
-h3 {
-  color: #0099dd;
-  text-shadow: 0 0 8px #0099dd;
-}
-
-/* ====== Periodic Distortion Animations (H3 EXCLUDED) ====== */
-
-/* --- H1 Keyframes (100% Intensity) --- */
-
-@keyframes glitchTop-h1 {
-  2%, 64% {
-    transform: translate(2px, -2px);
-    clip: rect(25px, 9999px, 80px, 0);
-  }
-
-  3%, 65% {
-    transform: translate(-2px, 2px);
-    clip: rect(0, 9999px, 5px, 0);
-  }
-
-  4%, 66% {
-    transform: translate(2px, 2px);
-    clip: rect(40px, 9999px, 99px, 0);
-  }
-
-  5%, 67% {
-    transform: translate(-2px, -2px);
-    clip: rect(15px, 9999px, 70px, 0);
-  }
-
-  6%, 68% {
-    transform: translate(0, 0);
-    clip: rect(50px, 9999px, 60px, 0);
-  }
-}
-
-@keyframes glitchBottom-h1 {
-  2%, 64% {
-    transform: translate(-2px, 2px);
-    clip: rect(40px, 9999px, 99px, 0);
-  }
-
-  3%, 65% {
-    transform: translate(2px, -2px);
-    clip: rect(0, 9999px, 25px, 0);
-  }
-
-  4%, 66% {
-    transform: translate(-2px, -2px);
-    clip: rect(20px, 9999px, 85px, 0);
-  }
-
-  5%, 67% {
-    transform: translate(2px, 2px);
-    clip: rect(55px, 9999px, 75px, 0);
-  }
-
-  6%, 68% {
-    transform: translate(0, 0);
-    clip: rect(10px, 9999px, 30px, 0);
-  }
-}
-
-/* --- H2 Keyframes (~60% Intensity) --- */
-
-@keyframes glitchTop-h2 {
-  2%, 64% {
-    transform: translate(1px, -1px);
-    clip: rect(15px, 9999px, 45px, 0);
-  }
-
-  4%, 66% {
-    transform: translate(-1px, 1px);
-    clip: rect(30px, 9999px, 70px, 0);
-  }
-
-  6%, 68% {
-    transform: translate(0, 0);
-    clip: rect(25px, 9999px, 35px, 0);
-  }
-}
-
-@keyframes glitchBottom-h2 {
-  2%, 64% {
-    transform: translate(-1px, 1px);
-    clip: rect(25px, 9999px, 80px, 0);
-  }
-
-  4%, 66% {
-    transform: translate(1px, -1px);
-    clip: rect(10px, 9999px, 35px, 0);
-  }
-
-  6%, 68% {
-    transform: translate(0, 0);
-    clip: rect(40px, 9999px, 50px, 0);
-  }
-}
-
-/* ===================================================================== */
-
-/* DEFINITIVE BLUEPRINT LAYOUT FIX (Desktop Only)                        */
-
-/* ===================================================================== */
-
-.blueprint-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* Two equal-width columns */
-  gap: 2rem;
-  /* Space between columns */
-  align-items: center;
-  /* Vertically align content */
-}
-
-.blueprint-hub-visual {
-  height: 24rem;
-  /* 384px */
-}
-
-/* --- Hologram Text Effect --- */
-
-.hologram-text {
-  animation: hologramFlicker 4s ease-in-out infinite;
-}
-
-@keyframes hologramFlicker {
-  0% {
-    opacity: 0.8;
-    text-shadow: 0 0 6px #39ff14;
-  }
-
-  30% {
-    opacity: 0.9;
-    text-shadow: 0 0 8px #39ff14;
-  }
-
-  50% {
-    opacity: 0.7;
-    text-shadow: 0 0 10px #39ff14;
-  }
-
-  70% {
-    opacity: 1;
-    text-shadow: 0 0 8px #39ff14;
-  }
-
-  100% {
-    opacity: 0.8;
-    text-shadow: 0 0 6px #39ff14;
-  }
-}
-
-/* --- Holographic Image Effect --- */
-
-.hologram-image {
-  position: absolute;
-  top: -2.5rem;
-  /* Pulls the image up */
-  right: -2rem;
-  /* Pushes the image right */
-  width: 100px;
-  /* Controls the size of the hologram */
-  height: auto;
-  opacity: 0.7;
-  mix-blend-mode: color-dodge;
-  /* Creates a light-based blending effect */
-  /* This filter chain converts the image to the cyan hologram color */
-  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
-  animation: hologramFlicker 5s infinite ease-in-out;
-}
-
-/* Scanline overlay for the hologram */
-
-.hologram-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.1) 0px,
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 2px
-  );
-  z-index: 2;
-}
-
-@keyframes hologramFlicker {
-  0%   {
-    opacity: 0.6;
-    transform: translateY(0);
-  }
-
-  50%  {
-    opacity: 0.8;
-    transform: translateY(-3px);
-  }
-
-  100% {
-    opacity: 0.6;
-    transform: translateY(0);
-  }
-}
-
-/* --- Scrolling Hologram Effect --- */
-
-.card--hologram {
-  /* This class will be added to any card to activate the effect */
-  position: relative;
-  overflow: hidden;
-}
-
-.card--hologram::after {
-  content: '';
-  position: absolute;
-  top: -1.5rem;
-  /* Position the hologram */
-  right: -1rem;
-  /* IMPORTANT: These dimensions must match each frame of your sprite sheet */
-  width: 150px;
-  height: 150px;
-  /* The path to your new sprite sheet */
-  background-image: url('{{ "/assets/img/hologram-sprite.png" | relative_url }}');
-  /* This animation scrolls through the 6 frames */
-  animation: scrollHologram 12s steps(6) infinite;
-  /* Holographic visual filters */
-  opacity: 0.7;
-  mix-blend-mode: color-dodge;
-  filter: grayscale(100%) sepia(100%) hue-rotate(130deg) saturate(500%) brightness(1.2) drop-shadow(0 0 8px #0099dd);
-}
-
-@keyframes scrollHologram {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    /* This value is -1 * (height_of_frame * number_of_frames) */
-    /* e.g., -1 * (150px * 6) = -900px */
-    background-position: 0 -900px;
-  }
-}
-
-/* --- Hero Bleed Image Effect --- */
-
-.hero-bleed-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: auto;
-  /* Maintain aspect ratio */
-  max-width: 40%;
-  /* Prevent image from taking over the box */
-  /* Styling for the effect */
-  opacity: 0.3;
-  mix-blend-mode: screen;
-  /* Blends the light parts of the image */
-  /* This creates the soft fade on the right edge */
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-}
-
-/* --- 3D Gallery Styles --- */
-
-#gallery-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-#gallery-container:active {
-  cursor: grabbing;
-}
 
 .hover\:bg-primary-red:hover {
   --tw-bg-opacity: 1;
